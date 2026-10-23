@@ -1,3 +1,13 @@
+# v1.0.1 build notes
+
+The source asset tree intentionally retains every original logical frame file.
+`pack_assets.py` deduplicates exact encoded bytes into a content-addressed local
+build directory; it never deletes previous/unknown output. Reusing that directory
+requires an exact file/content match. No new build or runtime dependency is added.
+Build identity records both source and packaged manifest SHA-256. Bundle/ZIP gates
+verify logical counts and the exact referenced physical set, all PE imports and
+absence of `_hashlib`/libcrypto. Tests compare all logical Qt pixels and offsets.
+
 # Build and verify
 
 Windows x64 and Python 3.12.10. The checked-in Core/Ultra images are the authorized

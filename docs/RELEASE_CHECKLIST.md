@@ -1,7 +1,7 @@
 # Stable-release gates
 
 The stable Release is published only after these gates pass. The final result
-record is [RELEASE-VALIDATION.json](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.0/RELEASE-VALIDATION.json),
+record is [RELEASE-VALIDATION.json](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.1/RELEASE-VALIDATION.json),
 which identifies the actual tested binary and source hashes. This checklist is not
 a substitute for that evidence.
 
@@ -14,7 +14,7 @@ a substitute for that evidence.
 | Software tests | Both edition profiles and ruff; CI uses real tracked assets |
 | Desktop input | Real transparent/opaque clicks, drag, menu Exit, relaunch, duplicate suppression |
 | Tray | Separate evidence for physical icon clicks and injected notification fallback |
-| Stability | Each final EXE: visible 30 min, paused 5 min, hidden 5 min, restore/exit |
+| Stability | Each final EXE: SKIPPED_BY_USER (v4); short stability, complete clips and repeated starts instead; not a long-soak PASS, restore/exit |
 | Installation | Owned update/refusal, actual uninstall/reinstall; settings and rollback preserved |
 | Performance | Three independent starts per product; matched pair scripts; failures/uncertainty retained |
 | Rights | Owner-confirmed non-commercial assets; accurate origin/artist attribution; separate code license |

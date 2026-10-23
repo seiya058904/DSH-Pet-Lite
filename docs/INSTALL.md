@@ -1,3 +1,10 @@
+# Updating to v1.0.1
+
+Use the owned update tool below, or extract the new portable ZIP into a fresh
+folder. Overlaying a previous portable folder leaves obsolete duplicate frame
+files behind and does not realize the full storage reduction. Settings paths and
+schema are unchanged; the owned updater retains the complete previous install.
+
 # Install, switch and remove
 
 The portable ZIP runs directly after extraction. Start the named Core or Ultra EXE.

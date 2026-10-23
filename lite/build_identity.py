@@ -5,6 +5,7 @@ import json
 import subprocess
 from pathlib import Path
 from edition import EDITIONS, assets_for, profile
+from pack_assets import asset_plan
 
 
 def main():
@@ -13,12 +14,13 @@ def main():
     args = parser.parse_args()
     data = profile(args.edition)
     data['source_sha'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
-    inputs = ['lite/app.py', 'lite/edition.py', 'lite/roaming.py', 'lite/DSH-Pet-Lite.spec',
+    inputs = ['lite/app.py', 'lite/edition.py', 'lite/roaming.py', 'lite/pack_assets.py', 'lite/DSH-Pet-Lite.spec',
               'lite/requirements.txt', 'lite/requirements-build.txt', 'lite/licenses',
               'lite/assets-core' if args.edition == 'core' else 'lite/assets-ultra',
               'LICENSE', 'THIRD_PARTY_NOTICES.md']
     data['dirty'] = bool(subprocess.check_output(['git', 'status', '--porcelain', '--', *inputs]))
-    data['manifest_sha256'] = hashlib.sha256((assets_for(args.edition)/'manifest.json').read_bytes()).hexdigest()
+    data['source_manifest_sha256'] = hashlib.sha256((assets_for(args.edition)/'manifest.json').read_bytes()).hexdigest()
+    data['manifest_sha256'] = hashlib.sha256(asset_plan(assets_for(args.edition))[0]).hexdigest()
     target = Path('build/identity')/args.edition/'build-info.json'
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(data, indent=2), encoding='utf-8')

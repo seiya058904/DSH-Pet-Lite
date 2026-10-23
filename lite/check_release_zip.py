@@ -26,7 +26,14 @@ def main():
         manifest = json.loads(archive.read(prefix+'assets/manifest.json'))
         assert len(manifest['clips']) == (11 if args.edition == 'core' else 3)
         frames = [n for n in names if n.startswith(prefix+'assets/') and n.endswith('.webp')]
-        assert len(frames) == (2651 if args.edition == 'core' else 723)
+        assert sum(c['frames'] for c in manifest['clips'].values()) == (2651 if args.edition == 'core' else 723)
+        expected_frames = {prefix+f'assets/{name}/{i:04}.{manifest["format"]}'
+                           for name, clip in manifest['clips'].items() for i in clip['frame_indices']}
+        assert set(frames) == expected_frames
+        assert manifest['fps'] == 24
+        for clip in manifest['clips'].values():
+            assert len(clip['frame_indices']) == len(clip['offsets']) == clip['frames']
+            assert all(type(i) is int and 0 <= i < clip['frames'] for i in clip['frame_indices'])
         assert not any('/translations/' in n and n.endswith('.qm') for n in names)
         assert product+'/'+product+'.exe' in names
     print(json.dumps({'edition': args.edition, 'zip': path.name, 'bytes': path.stat().st_size,

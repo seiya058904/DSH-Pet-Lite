@@ -2,7 +2,7 @@
 
 For LGPL-3.0 network distribution, equivalent access to the complete unmodified
 corresponding library sources is provided alongside the binary ZIPs, at no charge:
-https://github.com/seiya058904/DSH-Pet-Lite/releases/tag/v1.0.0
+https://github.com/seiya058904/DSH-Pet-Lite/releases/tag/v1.0.1
 
 The application uses unmodified official PyPI PySide6-Essentials 6.12.0 and
 shiboken6 6.12.0 wheels. This application does not patch their DLLs.
@@ -13,9 +13,9 @@ Unused Qt translations and unused modules are not distributed.
 
 | Archive | SHA-256 |
 |---|---|
-| [qtbase-everywhere-src-6.12.0.tar.xz](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.0/qtbase-everywhere-src-6.12.0.tar.xz) | `a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307` |
-| [qtimageformats-everywhere-src-6.12.0.tar.xz](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.0/qtimageformats-everywhere-src-6.12.0.tar.xz) | `0943132b5db8de6b6a7f1d162682173e8763c7ed94e80fd39113292845f67762` |
-| [pyside-setup-everywhere-src-6.12.0.tar.xz](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.0/pyside-setup-everywhere-src-6.12.0.tar.xz) | `099c1a597cf33c1b000e11cf68a0b82d216fb802bf81726efc720394f10c7751` |
+| [qtbase-everywhere-src-6.12.0.tar.xz](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.1/qtbase-everywhere-src-6.12.0.tar.xz) | `a951bd163c7b80fc6b8c88d7668fb56abf91c152373e13c10666763238131307` |
+| [qtimageformats-everywhere-src-6.12.0.tar.xz](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.1/qtimageformats-everywhere-src-6.12.0.tar.xz) | `0943132b5db8de6b6a7f1d162682173e8763c7ed94e80fd39113292845f67762` |
+| [pyside-setup-everywhere-src-6.12.0.tar.xz](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.1/pyside-setup-everywhere-src-6.12.0.tar.xz) | `099c1a597cf33c1b000e11cf68a0b82d216fb802bf81726efc720394f10c7751` |
 
 Publisher origin URLs and checksums are also recorded in the source repository's
 benchmarks/public/library-sources.json. The archives are source deliveries, not

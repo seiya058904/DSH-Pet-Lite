@@ -48,6 +48,8 @@ class Pet(QWidget):
         self.config_path = Path(config_path)
         self.config = read_config(self.config_path)
         self.manifest = json.loads((self.assets / 'manifest.json').read_text(encoding='utf-8'))
+        self.frame_indices = {name: clip.get('frame_indices', range(clip['frames']))
+                              for name, clip in self.manifest['clips'].items()}
         if edition == 'ultra' and set(self.manifest['clips']) != {'idle', 'click', 'drag'}:
             raise ValueError('Ultra must contain exactly idle, click and drag')
         if edition == 'core':
@@ -138,7 +140,8 @@ class Pet(QWidget):
         key = (self.clip, self.index)
         image = self.cache.get(key)
         if image is None:
-            image = QImage(str(self.assets / self.clip / f'{self.index:04}.{self.manifest["format"]}'))
+            physical_index = self.frame_indices[self.clip][self.index]
+            image = QImage(str(self.assets / self.clip / f'{physical_index:04}.{self.manifest["format"]}'))
             if image.isNull():
                 self.resource_error = f'Missing or invalid animation frame: {key}'
                 self.paused = True

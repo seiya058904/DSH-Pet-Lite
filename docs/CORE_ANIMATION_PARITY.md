@@ -1,3 +1,11 @@
+# v1.0.1 package representation
+
+Source and logical scope remain Core 11 / 2,651 and Ultra 3 / 723 at 24 fps.
+Core packages 2,531 unique physical frames, Ultra 686. `frame_indices` maps each
+logical frame to an exact-byte duplicate in the same clip; logical offsets are
+never aliased. All Qt RGBA and premultiplied pixels are compared in both edition
+test profiles. No re-encoding, resizing, alpha change or skipped timeline step.
+
 # Core animation parity
 
 Official fixed core: 11 clips / 2,651 frames, all 24 fps. Every frame was compared

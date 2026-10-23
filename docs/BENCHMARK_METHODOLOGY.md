@@ -1,3 +1,30 @@
+# v1.0.1 matched release-to-candidate protocol
+
+`lite/benchmark_release.py --base <exact-v1.0.0-bundles> --paired-base <candidate-bundles> --output <new-evidence-directory> --label paired`
+uses fresh isolated settings and alternating A/B order (B/A on the second pair),
+three independent starts per edition. Seed 101/102/103, position 500/430, actual
+1920x1080 / DPR 1.0, no OS cache flush. Other apps stay open. Ready-file paint time
+and test-control response are application proxies, not Present or physical input.
+
+Warmup: 12 seconds. Idle 22 seconds, click 11, drag 11; Core additionally turn 11
+and move 22 (including possible turn prelude); pause 5, hide 5, restore 3. The
+single process collector records actual elapsed intervals, memory, cycles,
+threads/handles, file I/O, context switches, process/thread CPU diagnostics and
+system load. All full samples, per-run summaries, adverse samples and approximate
+three-pair t intervals are retained. No validated CPU percentage is inferred.
+Opt-in paint timestamps add equal bounded instrumentation to both sides.
+
+All-frame read/decode/premultiply and raster timings are separate OS-warm component
+microbenchmarks; they are not presented as in-process final EXE decoder telemetry.
+Final tagged executables are measured separately and never relabeled candidates.
+The user's v4 instruction cancels the historical 40-minute soak gate below:
+SKIPPED_BY_USER, replaced by short stability, complete-clip and independent starts.
+This replacement is not a long-soak PASS.
+
+---
+
+## Historical protocol
+
 # Core / Ultra benchmark methodology
 
 ## Objects and scope

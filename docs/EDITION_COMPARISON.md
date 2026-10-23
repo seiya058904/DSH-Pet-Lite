@@ -1,3 +1,11 @@
+# v1.0.1 storage-only refinement
+
+Build-only `pack_assets.py` creates a deterministic per-clip physical index and
+retains every logical frame and offset. Runtime adds one list lookup when an
+uncached frame is loaded; cache keys, QImage drawing and scheduling are unchanged.
+Python's optional `_hashlib`/OpenSSL backend is excluded. All required Python/Qt
+libraries and notices remain. Ultra still has no roaming code or Core assets.
+
 # Core and Ultra
 
 Core embeds only the official core package: 5 click, 3 move, idle, drag and turn,

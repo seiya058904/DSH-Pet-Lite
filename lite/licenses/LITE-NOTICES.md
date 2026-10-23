@@ -8,8 +8,8 @@ OC 溟月: 上善无形; community animation preparation. Preserve this attribut
 The upstream notice describes CC BY-NC-SA-like personal/noncommercial conditions;
 the origin README permits open source use, prohibits commercial use, and requires
 the origin GitHub address in every presentation/distribution of a derivative.
-This package is only for the requesting user's local noncommercial use. No
-commercial rights or right to publish are asserted. The animation is the actual
+Non-commercial distribution follows the authorization and retained attribution
+conditions in ASSET_LICENSE.md. No commercial rights are asserted. The animation is the actual
 blue-haired character in the fixed upstream sources, not a whale replacement.
 Core includes the official 11 core clips; Ultra includes idle, click-happy and drag only.
 Transparent margins were cropped and frames resized to 72% with Lanczos,
@@ -34,7 +34,8 @@ It incorporates libwebp, Copyright (c) 2010 Google Inc., BSD-3-Clause;
 the complete COPYING and additional patent grant are in licenses/libwebp/.
 
 Python: PSF license and incorporated third-party notices in Python-LICENSE.txt.
-OpenSSL (Python hashlib dependency): Apache-2.0, OpenSSL-LICENSE.txt.
+The optional Python _hashlib/OpenSSL backend is not shipped in v1.0.1.
+Python builtin hashing remains; OpenSSL-LICENSE.txt is retained as historical notice.
 PyInstaller bootloader: GPL-2.0-or-later with bootloader distribution exception;
 see PyInstaller-COPYING.txt. PyInstaller is a build tool, not a resident service.
 Microsoft C/C++ runtime DLLs are unmodified redistributables from the Python/Qt

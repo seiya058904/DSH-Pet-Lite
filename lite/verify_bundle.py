@@ -2,8 +2,10 @@
 import json
 import argparse
 import hashlib
+import os
 from pathlib import Path
 from edition import EDITIONS, assets_for, profile
+from pack_assets import asset_plan
 
 import pefile
 from PyInstaller.archive.readers import CArchiveReader
@@ -27,9 +29,11 @@ identity = json.loads((bundle / '_internal/build-info.json').read_text())
 assert identity['edition'] == args.edition
 source_assets = assets_for(args.edition)
 bundled_assets = bundle / '_internal/assets'
-expected = {p.relative_to(source_assets).as_posix(): p for p in source_assets.rglob('*') if p.is_file()}
+manifest_bytes, expected = asset_plan(source_assets)
 actual = {p.relative_to(bundled_assets).as_posix(): p for p in bundled_assets.rglob('*') if p.is_file()}
-assert actual.keys() == expected.keys(), 'Resource closure mismatch'
+assert actual.keys() == expected.keys() | {'manifest.json'}, 'Resource closure mismatch'
+assert actual['manifest.json'].read_bytes() == manifest_bytes
+assert hashlib.sha256(manifest_bytes).hexdigest() == identity['manifest_sha256']
 for name, path in expected.items():
     assert hashlib.sha256(path.read_bytes()).digest() == hashlib.sha256(actual[name].read_bytes()).digest(), name
 manifest = json.loads((bundled_assets / 'manifest.json').read_text(encoding='utf-8'))
@@ -43,21 +47,33 @@ files = list(bundle.rglob('*'))
 assert not [p for p in files if p.is_file() and (p.suffix.lower() in ('.onnx', '.webm', '.mp3')
                                                or 'ffmpeg' in p.name.lower())]
 names = {p.name.lower() for p in files if p.is_file()}
+assert '_hashlib.pyd' not in names and 'libcrypto-3.dll' not in names
 pe_imports = {}
+all_pe_imports = {}
+system32 = Path(os.environ['SystemRoot']) / 'System32'
 for path in files:
     if path.suffix.lower() in ('.dll', '.pyd', '.exe'):
         pe = pefile.PE(str(path), fast_load=True)
-        pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY['IMAGE_DIRECTORY_ENTRY_IMPORT']])
-        imports = [e.dll.decode() for e in getattr(pe, 'DIRECTORY_ENTRY_IMPORT', [])]
+        pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY['IMAGE_DIRECTORY_ENTRY_IMPORT'],
+                                              pefile.DIRECTORY_ENTRY['IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT']])
+        imports = [e.dll.decode() for e in [*getattr(pe, 'DIRECTORY_ENTRY_IMPORT', []),
+                                           *getattr(pe, 'DIRECTORY_ENTRY_DELAY_IMPORT', [])]]
         qt = [name for name in imports if name.lower().startswith('qt6')]
         assert all(name.lower() in names for name in qt), (path, qt)
+        unresolved = [name for name in imports if name.lower() not in names
+                      and not name.lower().startswith(('api-ms-', 'ext-ms-'))
+                      and not (system32 / name).is_file()]
+        assert not unresolved, (path, unresolved)
         pe_imports[str(path.relative_to(bundle))] = qt
+        all_pe_imports[str(path.relative_to(bundle))] = imports
+        pe.close()
 for name in ('LICENSE', 'THIRD_PARTY_NOTICES.md', 'licenses/LGPL-3.0-only.txt',
              'licenses/Python-LICENSE.txt', 'licenses/LITE-NOTICES.md',
              'licenses/libwebp/COPYING', 'licenses/libwebp/PATENTS',
              'assets/manifest.json'):
     assert (bundle / '_internal' / name).is_file(), name
 result = {'edition': args.edition, 'identity': identity, 'modules': modules, 'qt_imports': pe_imports,
+          'all_pe_imports': all_pe_imports, 'pe_closure': 'bundled DLLs or Windows System32/API sets',
           'asset_files_sha256': {n: hashlib.sha256(p.read_bytes()).hexdigest() for n, p in actual.items()},
           'file_manifest': [{'path': p.relative_to(bundle).as_posix(), 'bytes': p.stat().st_size,
                              'sha256': hashlib.sha256(p.read_bytes()).hexdigest()}

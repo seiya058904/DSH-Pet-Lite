@@ -1,3 +1,65 @@
+# v1.0.1 final performance exploration
+
+Primary comparison: the exact public v1.0.0 ZIPs, CRC/manifest/hash verified,
+against the isolated v1.0.1 implementation candidate. The old table below remains
+historical candidate data, not measurements of either new final tagged binary.
+See [versioned summary](../benchmarks/public/v1.0.1-exploration.json) and the
+[complete raw evidence](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.1/BENCHMARKS-v1.0.1.zip).
+
+## Results and retained changes
+
+| Package | Exact v1.0.0 ZIP bytes | Candidate ZIP bytes | Change | Expanded reduction |
+|---|---:|---:|---:|---:|
+| Core | 123,398,810 | 117,020,233 | -5.17% | 9,724,673 bytes |
+| Ultra | 53,567,347 | 50,239,997 | -6.21% | 6,711,791 bytes |
+
+These are candidate package identities. Exact final-tag bytes and EXE measurements
+are in [RELEASE-VALIDATION.json](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.1/RELEASE-VALIDATION.json).
+No stable CPU, memory, first-paint or power reduction is claimed.
+
+1. KEEP: per-clip exact-byte deduplication. Core removes 120 physical duplicates;
+   Ultra removes 37. All 2,651 / 723 logical frames retain individual offsets and
+   24 fps deadlines. Qt RGBA and premultiplied equality is checked for every frame.
+2. KEEP: exclude optional `_hashlib` and its 5.23 MB OpenSSL DLL; together 5.30 MB
+   expanded / 1.90 MB compressed. Python 3.12 random already uses builtin `_sha2`.
+   All guaranteed digest algorithms and seeded action sequences match in the probe.
+3. REJECT: ZIP level 9 yields the same frame bytes as level 6. Stored WebP saves only
+   23,124 Core / 6,983 Ultra bytes; no worthwhile distribution gain.
+4. REJECT: QPixmap raster drawing is essentially equal to QImage (~2.2–2.5 us in
+   the screening microbenchmark) and adds conversion. No renderer change.
+5. REJECT: lazy startup menus/manifest. Source constructor is only 8–10 ms, menu
+   and manifest ~1 ms each; no evidence for a stable 10% final-EXE startup gain.
+6. ALREADY OPTIMIZED: 40 MiB idle cache, one frame timer, stopped hidden/paused
+   scheduling, no periodic config saves. Keep them. Do not repeat the failed
+   16 MiB cache or stronger WebP experiment. Premultiply is ~0.007 ms versus
+   ~0.40 ms decode in the warm-file screening test; no copying rewrite justified.
+
+Exact duplicates share disk storage only; decoded cache keys remain logical, so
+there is no new cache policy or implied memory saving. No physical frame may be
+removed unless the original encoded bytes match; the original source assets stay
+in Git. Build-only pack_assets.py is not a runtime import.
+
+## Uncertainty and adverse evidence
+
+Baseline and A/B each use three fresh processes per edition. One GBK fixture read
+failed before workload; UTF-8 was made explicit and the failed record retained.
+An experimental build initially used the wrong identity basename; the failure was
+retained and fixed in the build harness. Neither is counted as a passing trial.
+GetProcessTimes, psutil and thread sums still exhibit implausibly zero deltas while
+cycles advance: CPU time is NOT RELIABLY MEASURED. Working Set can be trimmed by
+Windows and other applications; individual runs, P95/peaks and paired intervals
+are retained. Samples within one process are not independent launches.
+
+The native computer-use pipe was unavailable after retry/reset. Physical checks
+used the existing owned-window Win32/UIA probe instead, distinct from test-control
+messages. Long 30+5+5 soak is SKIPPED_BY_USER, superseding the historical checklist.
+High DPI, multiple monitors, 4K, GPU, watts, physical network disconnection and
+monitor Present remain unverified. No global power/timer/DPI changes were made.
+
+---
+
+## Historical v1.0.0 candidate report (unchanged data)
+
 # Core / Ultra performance report
 
 The official 348.97 MB base ZIP contains **11 clips / 2,651 frames**, not 106.
