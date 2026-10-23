@@ -1,0 +1,29 @@
+name: Code-only validation (no character assets)
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  software-tests:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        edition: [full, ultra]
+    env:
+      DSH_TEST_EDITION: ${{ matrix.edition }}
+      DSH_SYNTHETIC_TEST_ASSETS: '1'
+      QT_QPA_PLATFORM: offscreen
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: lite/requirements-lock.txt
+      - run: python -m pip install -r lite/requirements-lock.txt
+      - run: python -m ruff check lite
+      - run: python -m pytest -q
+      - run: git diff --check
+      - name: State release boundary
+        run: Write-Output 'SOFTWARE TESTS ONLY. Real assets, GUI, packages and dual binary release are not validated by this workflow.'

@@ -1,0 +1,34 @@
+# Isolated import graph: deliberately does not collect the upstream pet package.
+from pathlib import Path
+import os
+import sys
+root = Path(SPECPATH).parent
+sys.path.insert(0, str(root / 'lite'))
+from edition import assets_for, profile
+edition = os.environ['DSH_BUILD_EDITION']
+product = profile(edition)['product']
+identity = Path(os.environ['DSH_BUILD_INFO'])
+a = Analysis([str(root / 'lite/app.py')], pathex=[str(root / 'lite')],
+    binaries=[], datas=[(str(assets_for(edition)), 'assets'), (str(identity), '.'),
+                        (str(root / 'LICENSE'), '.'),
+                        (str(root / 'THIRD_PARTY_NOTICES.md'), '.'),
+                        (str(root / 'lite/licenses'), 'licenses')],
+    hiddenimports=[], hookspath=[], runtime_hooks=[],
+    excludes=['pet', 'PySide6.QtNetwork', 'PySide6.QtQml', 'PySide6.QtQuick',
+              'PySide6.QtMultimedia', 'PySide6.QtOpenGL', 'PySide6.QtSql',
+              'PySide6.QtPrintSupport', 'PySide6.QtSvg', 'PIL', 'numpy', 'cv2',
+              'onnxruntime', 'rapidocr', 'psutil', 'imageio_ffmpeg', 'edge_tts',
+              'keyring', 'winrt', 'tkinter', 'unittest', 'pytest'] + (['roaming'] if edition == 'ultra' else []),
+    noarchive=False)
+# Raster QWidget backend: inspect PE imports before dropping optional image/OpenGL backends.
+plugins = {'qwindows.dll', 'qico.dll', 'qwebp.dll', 'qmodernwindowsstyle.dll'}
+a.binaries = [item for item in a.binaries
+              if (('/plugins/' not in item[0].replace('\\', '/') or
+                   Path(item[0]).name.lower() in plugins)
+                  and Path(item[0]).name.lower() not in
+                  {'qt6network.dll', 'qt6svg.dll', 'opengl32sw.dll'})]
+pyz = PYZ(a.pure)
+exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name=product,
+          debug=False, strip=False, upx=False, console=False,
+          icon=str(root / 'lite/assets/lite.ico'))
+coll = COLLECT(exe, a.binaries, a.datas, strip=False, upx=False, name=product)

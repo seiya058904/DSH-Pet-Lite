@@ -1,0 +1,61 @@
+"""Fail on forbidden modules/resources or dangling imports of pruned Qt DLLs."""
+import json
+import argparse
+import hashlib
+from pathlib import Path
+from edition import EDITIONS, assets_for, profile
+
+import pefile
+from PyInstaller.archive.readers import CArchiveReader
+
+root = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser()
+parser.add_argument('--edition', choices=EDITIONS, required=True)
+parser.add_argument('--dist', type=Path, default=root / 'dist/dual')
+args = parser.parse_args()
+product = profile(args.edition)['product']
+bundle = args.dist / product
+forbidden = ('pet', 'numpy', 'cv2', 'rapidocr', 'onnxruntime', 'edge_tts', 'keyring',
+             'winrt', 'psutil', 'PIL', 'imageio_ffmpeg')
+archive = CArchiveReader(str(bundle / f'{product}.exe')).open_embedded_archive('PYZ.pyz')
+modules = sorted(archive.toc)
+bad = [m for m in modules if any(m == x or m.startswith(x+'.') for x in forbidden)]
+assert not bad, bad
+if args.edition == 'ultra':
+    assert 'roaming' not in modules
+identity = json.loads((bundle / '_internal/build-info.json').read_text())
+assert identity['edition'] == args.edition
+source_assets = assets_for(args.edition)
+bundled_assets = bundle / '_internal/assets'
+expected = {p.relative_to(source_assets).as_posix(): p for p in source_assets.rglob('*') if p.is_file()}
+actual = {p.relative_to(bundled_assets).as_posix(): p for p in bundled_assets.rglob('*') if p.is_file()}
+assert actual.keys() == expected.keys(), 'Resource closure mismatch'
+for name, path in expected.items():
+    assert hashlib.sha256(path.read_bytes()).digest() == hashlib.sha256(actual[name].read_bytes()).digest(), name
+manifest = json.loads((bundled_assets / 'manifest.json').read_text(encoding='utf-8'))
+assert len(manifest['clips']) == (106 if args.edition == 'full' else 3)
+assert sum(c['frames'] for c in manifest['clips'].values()) == (25423 if args.edition == 'full' else 723)
+files = list(bundle.rglob('*'))
+assert not [p for p in files if p.is_file() and (p.suffix.lower() in ('.onnx', '.webm', '.mp3')
+                                               or 'ffmpeg' in p.name.lower())]
+names = {p.name.lower() for p in files if p.is_file()}
+pe_imports = {}
+for path in files:
+    if path.suffix.lower() in ('.dll', '.pyd', '.exe'):
+        pe = pefile.PE(str(path), fast_load=True)
+        pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY['IMAGE_DIRECTORY_ENTRY_IMPORT']])
+        imports = [e.dll.decode() for e in getattr(pe, 'DIRECTORY_ENTRY_IMPORT', [])]
+        qt = [name for name in imports if name.lower().startswith('qt6')]
+        assert all(name.lower() in names for name in qt), (path, qt)
+        pe_imports[str(path.relative_to(bundle))] = qt
+for name in ('LICENSE', 'THIRD_PARTY_NOTICES.md', 'licenses/LGPL-3.0-only.txt',
+             'licenses/Python-LICENSE.txt', 'licenses/LITE-NOTICES.md',
+             'licenses/libwebp/COPYING', 'licenses/libwebp/PATENTS',
+             'assets/manifest.json'):
+    assert (bundle / '_internal' / name).is_file(), name
+result = {'edition': args.edition, 'identity': identity, 'modules': modules, 'qt_imports': pe_imports,
+          'files': len([p for p in files if p.is_file()]),
+          'bytes': sum(p.stat().st_size for p in files if p.is_file()),
+          'forbidden_modules': bad}
+(root / f'benchmarks/dual-{args.edition}-bundle.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+print(json.dumps({k: result[k] for k in ('files', 'bytes', 'forbidden_modules')}))

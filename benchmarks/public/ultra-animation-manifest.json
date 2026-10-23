@@ -1,0 +1,51 @@
+{
+  "edition": "ultra",
+  "upstream": "59c8bda3d1078155564267fbcb34fff9d2d80aff",
+  "clips": 3,
+  "frames": 723,
+  "categories": {
+    "idle": 1,
+    "click": 1,
+    "drag": 1
+  },
+  "manifest_sha256": "72cdde00308098afe7982fb49d2643f52fe1b4a79387dc7e3498c570ca14de90",
+  "animations": [
+    {
+      "id": "idle",
+      "category": "idle",
+      "source": "待机呼吸休闲.webm",
+      "frames": 241,
+      "fps": 24,
+      "duration_s": 10.041666666666666,
+      "encoded_frames_sha256": "bc92f75609144f50ffd2f0fcb74dd19bd33ab23c90dbaf35718a3ffba4e8bee1",
+      "pixel_or_historical_hash_failures": [],
+      "status": "PASS",
+      "trigger": "menu; local animation scheduler"
+    },
+    {
+      "id": "click",
+      "category": "click",
+      "source": "点击回应-开心跃动.webm",
+      "frames": 241,
+      "fps": 24,
+      "duration_s": 10.041666666666666,
+      "encoded_frames_sha256": "06b85c4114522659b41b92545c0e51030d898ce1ae015c0284e1b114312aed25",
+      "pixel_or_historical_hash_failures": [],
+      "status": "PASS",
+      "trigger": "menu; click"
+    },
+    {
+      "id": "drag",
+      "category": "drag",
+      "source": "被鼠标拖拽悬空反馈.webm",
+      "frames": 241,
+      "fps": 24,
+      "duration_s": 10.041666666666666,
+      "encoded_frames_sha256": "0df9bbf7ae5fcb17179349d1cc5bbf3d0901336aaff4c3a0ad34a3018321a7e0",
+      "pixel_or_historical_hash_failures": [],
+      "status": "PASS",
+      "trigger": "menu; pointer drag while held"
+    }
+  ],
+  "scope": "Stored pixels at supported 72% size; not physical display presentation"
+}

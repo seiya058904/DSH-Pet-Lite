@@ -1,0 +1,32 @@
+{
+  "full": {
+    "edition": "full",
+    "upstream": "59c8bda3d1078155564267fbcb34fff9d2d80aff",
+    "clips": 106,
+    "frames": 25423,
+    "categories": {
+      "click": 5,
+      "drag": 1,
+      "events": 6,
+      "idle": 1,
+      "move": 3,
+      "random": 89,
+      "turn": 1
+    },
+    "manifest_sha256": "2dd3f6c4184df21c7927324f2de0d755cb2c5170b5e65cf1fdb54f7186bb2126",
+    "scope": "Stored pixels at supported 72% size; not physical display presentation"
+  },
+  "ultra": {
+    "edition": "ultra",
+    "upstream": "59c8bda3d1078155564267fbcb34fff9d2d80aff",
+    "clips": 3,
+    "frames": 723,
+    "categories": {
+      "idle": 1,
+      "click": 1,
+      "drag": 1
+    },
+    "manifest_sha256": "72cdde00308098afe7982fb49d2643f52fe1b4a79387dc7e3498c570ca14de90",
+    "scope": "Stored pixels at supported 72% size; not physical display presentation"
+  }
+}

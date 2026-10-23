@@ -1,0 +1,65 @@
+{
+  "queries": [
+    {
+      "package": {
+        "name": "PySide6-Essentials",
+        "ecosystem": "PyPI"
+      },
+      "version": "6.12.0"
+    },
+    {
+      "package": {
+        "name": "shiboken6",
+        "ecosystem": "PyPI"
+      },
+      "version": "6.12.0"
+    },
+    {
+      "package": {
+        "name": "PyInstaller",
+        "ecosystem": "PyPI"
+      },
+      "version": "6.22.3"
+    },
+    {
+      "package": {
+        "name": "Pillow",
+        "ecosystem": "PyPI"
+      },
+      "version": "13.0.0"
+    },
+    {
+      "package": {
+        "name": "psutil",
+        "ecosystem": "PyPI"
+      },
+      "version": "7.2.2"
+    },
+    {
+      "package": {
+        "name": "pytest",
+        "ecosystem": "PyPI"
+      },
+      "version": "9.1.1"
+    },
+    {
+      "package": {
+        "name": "ruff",
+        "ecosystem": "PyPI"
+      },
+      "version": "0.17.2"
+    }
+  ],
+  "response": {
+    "results": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "scope": "OSV package-version query; absence of records does not prove absence of vulnerabilities"
+}
