@@ -60,11 +60,12 @@ def main():
             saved_links.append((link, saved))
     try:
         for link, saved in saved_links:
-            link.rename(saved)
+            # The source checkout/archive may be on a different Windows volume.
+            shutil.move(str(link), str(saved))
         target.rename(backup)
         subprocess.run(['powershell', '-NoProfile', '-File', str(Path(__file__).with_name('install.ps1')),
                         '-Edition', args.edition, '-SourceRoot', args.source_root], env=env, check=True)
-    except Exception:
+    except Exception as exc:
         if backup.exists():
             if target.exists():
                 target.rename(programs/f'{product}.failed-{time.time_ns()}')
@@ -72,9 +73,9 @@ def main():
         for link, saved in saved_links:
             if saved.exists():
                 if link.exists():
-                    link.rename(archive/f'failed-{time.time_ns()}-{link.name}')
+                    shutil.move(str(link), str(archive/f'failed-{time.time_ns()}-{link.name}'))
                 shutil.copy2(saved, link)
-        raise RuntimeError('Update failed; previous installation and shortcuts restored') from None
+        raise RuntimeError('Update failed; previous installation and shortcuts restored') from exc
     print(json.dumps({'edition': args.edition, 'installed': str(target), 'rollback': str(backup)}))
 
 
