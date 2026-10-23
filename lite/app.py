@@ -50,6 +50,11 @@ class Pet(QWidget):
         self.manifest = json.loads((self.assets / 'manifest.json').read_text(encoding='utf-8'))
         if edition == 'ultra' and set(self.manifest['clips']) != {'idle', 'click', 'drag'}:
             raise ValueError('Ultra must contain exactly idle, click and drag')
+        if edition == 'core':
+            categories = [clip.get('category') for clip in self.manifest['clips'].values()]
+            expected = {'idle': 1, 'click': 5, 'drag': 1, 'move': 3, 'turn': 1}
+            if len(categories) != 11 or any(categories.count(k) != v for k, v in expected.items()):
+                raise ValueError('Core must contain exactly the eleven official core clips')
         self.resize(*self.manifest['size'])
         self.setAccessibleName('DSH Pet Lite 桌宠：拖动移动，点击互动，右键菜单')
         self.clip = 'idle'
@@ -57,9 +62,9 @@ class Pet(QWidget):
         self.click_clips = [n for n, c in self.manifest['clips'].items()
                             if c.get('category', n) == 'click']
         self.activity_clips = [n for n, c in self.manifest['clips'].items()
-                               if c.get('category') in ('random', 'move', 'turn')]
+                               if c.get('category') in ('move', 'turn')]
         self.roaming = None
-        if edition == 'full':
+        if edition == 'core':
             from roaming import Roaming
             self.roaming = Roaming(self)
         self.cache = {}
@@ -93,7 +98,7 @@ class Pet(QWidget):
         library = self.menu.addMenu('全部动画')
         groups = {}
         labels = {'idle': '待机', 'click': '点击反馈', 'drag': '拖拽',
-                  'move': '移动动作', 'turn': '转身', 'random': '日常动作', 'events': '情景动作'}
+                  'move': '移动动作', 'turn': '转身'}
         self.animation_actions = {}
         for name, clip in self.manifest['clips'].items():
             category = clip.get('category', name)

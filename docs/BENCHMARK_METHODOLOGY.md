@@ -1,64 +1,76 @@
-# Benchmark methodology
+# Core / Ultra benchmark methodology
 
-## Four products, two meaningful comparison pairs
+## Objects and scope
 
-A is the official v4.4.0 no-chat full-animation Windows package, ZIP SHA-256
+A is the official v4.4.0 no-chat base ZIP, **11 clips / 2,651 frames**, SHA-256
 `fa049e31f1b0d184f77639a749f239b55b48c64b2ba14b59d08b3897168b55aa`.
-B is the previous three-animation Lite, original executable SHA-256
-`53be71cf3b04c34cdb71d577aa6eaae913f2e81e21291e2a250b5d260d7e15f4`.
-C and D are Full and Ultra built from `c9c52f9fc8dd773c2d619b55d4a78d3de164a33e`.
+B is the actual first Core candidate built before translation pruning.
+C is the optimized Core candidate. U0 is the previously validated three-animation
+Ultra; U1 is the optimized Ultra. Exact EXE hashes are included with each trial.
 
-Compare A with C for full-animation product cost and B with D for the core
-three-animation product. C versus D is a functionality/footprint trade-off.
-Historical numbers are explicitly marked; old three-action ZIP results are never
-presented as Full results. Decimal MB means 1,000,000 bytes; MiB means 1,048,576.
+A/C package-size comparisons cover the same eleven clips. Their source pixel
+dimensions/storage differ: Lite keeps the established 72% display-scale lossless
+frames. Runtime comparisons with A are descriptive: the official action sequence
+is not externally controlled to match C. No runtime improvement percentage against
+A is claimed. B/C and U0/U1 use the same workload scripts and display conditions.
 
-## CPU and process tree
+Historical Full 106 measurements are not current Core results. The prior report's
+official-base full-library label was wrong and is explicitly superseded.
 
-The external sampler enumerates the root and all descendants, with fresh psutil
-process objects. It records GetProcessTimes user+kernel totals through typed Win32
-calls, psutil totals as a wrapper cross-check, QueryProcessCycleTime, Private Bytes,
-Working Set, threads, handles, I/O, connections and system CPU. Rates use actual
-monotonic intervals and the host's 16 logical CPUs. Raw cumulative values remain.
+## Independent trials
 
-Both CPU-time APIs showed long zero increments during active animation while CPU
-cycles continued advancing. CPU percentage is **NOT RELIABLY MEASURED**. Cycles
-are never converted with guessed clock frequency or described as energy savings.
-No driver, global timer resolution, power policy or administrative trace was changed.
+`lite/benchmark_core_ultra.py` alternates products across three fresh process
+starts each. No other pet is running during a trial. A separate temporary settings
+directory is used for each start; retained source/ZIP artifacts identify baselines.
+The collector is external and not shipped in the app.
 
-An owned synthetic three-second busy-loop calibration accumulated 2.78 native CPU
-seconds, confirming that the direct counter code can observe sustained CPU work.
-This does not repair the animation workload's anomalous accounting. See the
-[calibration samples](../benchmarks/public/cpu-counter-calibration.json).
+Each Lite trial warms for 12 seconds, then samples 24 seconds idle (reset every
+8 seconds to exclude automatic movement), 8 seconds click, 8 seconds drag,
+8 seconds idle, 5 seconds paused and 5 seconds hidden. Sampling is approximately
+one second, with real elapsed intervals recorded. Positions and seed are matched
+within each pair. A has movement and optional features disabled but retains its
+own action scheduling throughout its 58-second sample; its phases are not called
+matched pause/hide observations.
 
-## Timing, independent starts and long runs
+Private Bytes, Working Set, threads, handles, read/write I/O, process tree,
+connections, process CPU counters, per-thread cumulative time, context switches
+and QueryProcessCycleTime are retained. Memory summaries report mean/P95/peak,
+sample count and individual runs. Approximate paired t intervals have only three
+independent pairs and are correspondingly uncertain. Repeated samples within a
+process are not counted as independent starts. Caches are OS-warm, not reboot-cold.
 
-First Qt paint means completion of the first instrumented `paintEvent`; it differs
-from an IsWindowVisible proxy and is not a photometric screen measurement.
-Paint-event P95/P99 intervals diagnose application stalls, not compositor Present FPS.
-Process-cold starts retain OS file cache; they are not reboot-cold starts. Independent
-trials mean fresh processes, not multiple time windows from one process.
+## CPU and rendering limits
 
-The installed-binary stability runs target at least 1,800 seconds visible, 300
-paused and 300 hidden, then restore. Full visits every clip via deterministic
-controls with time for the complete clip and any turn prelude; Ultra visits its
-three clips. Both use a temporary working directory and Windows-only PATH.
-The two long runs overlap: their resource values are concurrent stability
-observations, not isolated performance comparisons. Background activity is recorded.
+Typed GetProcessTimes and fresh psutil process counters have shown zero increments
+while cycles advance. Thread cumulative times/context switches add a third
+diagnostic route, but disagreement and threads that may terminate between samples
+prevent a validated process CPU% claim. No administrator-only ETW session, driver,
+system counter policy or global timer/power setting is enabled to force a number.
+Cycles are not converted to CPU%, power or energy savings.
 
-Pointer tests use an owned backdrop, live Win32 hit ownership checks, real cursor
-clicks/drag and the actual menu Exit row. Test messages inspect state and control
-pause/hide; a Qt tray callback verifies restore. A physical tray-icon click is a
-separate unverified claim. Failed attempts are retained, including focus-sensitive input.
+First Qt paint is an application proxy, not physical screen presentation. Qt paint
+interval distributions are not monitor Present FPS. GPU and watts are not measured.
 
-## Optimization probes
+## Separate final binary acceptance
 
-Sampled stronger lossless WebP encoding saved about 3%, below the practical threshold
-for replacing all verified assets. A 16 MiB idle cache needed 449 decodes over three
-loops versus 241 with the existing 40 MiB limit; no cache needed 723. A stored
-container saved only tens of microseconds per sampled Full frame in warm-cache reads.
-These build-only probes do not establish end-to-end improvements. No speculative
-rewrite or new decoder shipped. [Raw probes](../benchmarks/public/optimization-probes.json).
+The final tag is built from a clean public source checkout. Its exact local ZIPs
+are subjected to real desktop interaction and final binary soaks, then uploaded
+unchanged. Candidate benchmark hashes and final release hashes are distinguished;
+CI builds independently validate source and are not substituted for the tested ZIPs.
 
-Normal playback remains 24 fps with every logical frame. Hidden and paused are the
-only deliberate stops. Adverse samples and limitations are not discarded.
+Each final edition's long-run target is at least 1,800 seconds visible, 300 paused,
+300 hidden, then restore and exit. The script visits every clip for its full
+duration, including turn preludes. Concurrent stability runs, if used, are labeled
+and are not treated as isolated performance comparisons. Separate short independent
+trials provide those comparisons. Final results are delivered in the
+`RELEASE-VALIDATION.json` release attachment and accompanying benchmark evidence.
+
+Physical pointer tests use an owned backdrop and verify live WindowFromPoint PID
+ownership before input. They test transparent pass-through, opaque click, drag,
+menu Exit, restart and single-instance behavior. UIA-observed taskbar icon
+rectangles are used for attempts at actual tray clicks; Qt-notification fallback
+and real icon clicks have distinct result names. Failures remain in the evidence.
+
+Only actual monitor conditions are reported. System resolution/scaling is not
+changed. Untested DPI, 4K, multiple monitors, physical disconnect, GPU, watts and
+physical Present stay unverified. Images show only the controlled backdrop/menu.

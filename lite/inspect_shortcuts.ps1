@@ -1,4 +1,4 @@
-param([Parameter(Mandatory)][ValidateSet('full','ultra')][string]$Edition)
+param([Parameter(Mandatory)][ValidateSet('core','ultra')][string]$Edition)
 $ErrorActionPreference = 'Stop'
 $suffix = (Get-Culture).TextInfo.ToTitleCase($Edition)
 $product = "DSH-Pet-Lite-$suffix"

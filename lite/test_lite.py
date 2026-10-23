@@ -11,7 +11,7 @@ from app import Pet, read_config, save_config
 from edition import assets_for
 import pytest
 
-EDITION = os.environ.get('DSH_TEST_EDITION', 'full')
+EDITION = os.environ.get('DSH_TEST_EDITION', 'core')
 
 
 def events(ms=100):
@@ -114,15 +114,15 @@ def test_click_and_drag_from_public_events(tmp_path):
         events()
 
 
-def test_full_library_menu_and_one_shot_lifecycle(tmp_path):
+def test_core_library_menu_and_one_shot_lifecycle(tmp_path):
     app = QApplication.instance() or QApplication([])
     app.setQuitOnLastWindowClosed(False)
     pet = Pet(tmp_path / 'settings.json', edition=EDITION, seed=42)
     try:
-        assert len(pet.manifest['clips']) == (106 if EDITION == 'full' else 3)
-        assert len(pet.click_clips) == (5 if EDITION == 'full' else 1)
+        assert len(pet.manifest['clips']) == (11 if EDITION == 'core' else 3)
+        assert len(pet.click_clips) == (5 if EDITION == 'core' else 1)
         assert len(pet.animation_actions) == len(pet.manifest['clips'])
-        assert (len(pet.activity_clips) > 80) if EDITION == 'full' else not pet.activity_clips
+        assert (len(pet.activity_clips) == 4) if EDITION == 'core' else not pet.activity_clips
         for name in pet.manifest['clips']:
             pet.animation_actions[name].trigger()
             if pet.roaming and pet.roaming.pending:
@@ -141,10 +141,10 @@ def test_full_library_menu_and_one_shot_lifecycle(tmp_path):
         events()
 
 
-def test_edition_is_required_and_ultra_rejects_full_assets(tmp_path):
+def test_edition_is_required_and_ultra_rejects_core_assets(tmp_path):
     QApplication.instance() or QApplication([])
     with pytest.raises(ValueError, match='exactly'):
-        Pet(tmp_path / 'settings.json', edition='ultra', assets=assets_for('full'))
+        Pet(tmp_path / 'settings.json', edition='ultra', assets=assets_for('core'))
 
 
 def test_missing_action_preserves_last_frame_and_stops(tmp_path):
@@ -170,11 +170,11 @@ def test_missing_action_preserves_last_frame_and_stops(tmp_path):
         events()
 
 
-@pytest.mark.skipif(EDITION != 'full', reason='Ultra deliberately excludes roaming')
+@pytest.mark.skipif(EDITION != 'core', reason='Ultra deliberately excludes roaming')
 def test_roaming_curve_turn_and_interruption(tmp_path):
     app = QApplication.instance() or QApplication([])
     app.setQuitOnLastWindowClosed(False)
-    pet = Pet(tmp_path / 'settings.json', edition='full', seed=42)
+    pet = Pet(tmp_path / 'settings.json', edition='core', seed=42)
     try:
         g = app.primaryScreen().availableGeometry()
         pet.move(g.left()+250, g.top()+50)

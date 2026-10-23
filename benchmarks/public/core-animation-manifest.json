@@ -1,0 +1,119 @@
+{
+  "official_core_zip_sha256": "64d81c15c2ea85e1ae214490502504db084a650723056afa1d010399383e1c8c",
+  "clips": [
+    {
+      "id": "action_000",
+      "label": "点击回应-傲娇生气",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "ffac53163d2f3220aaaf2e80e9bfc6ff688e1db719690cec479644fcd791f7c8",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus click interaction/scheduling"
+    },
+    {
+      "id": "action_001",
+      "label": "点击回应-元气挥手",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "cc3ca29087109b4dba495617baf2102518312786e0eef3a5e5859fbc6454f4f6",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus click interaction/scheduling"
+    },
+    {
+      "id": "action_002",
+      "label": "点击回应-害羞惊讶",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "4905e419d0144cb2a64262de77ce7904fa7d82dfac5e452a7605a78ea9798c2b",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus click interaction/scheduling"
+    },
+    {
+      "id": "click",
+      "label": "点击回应-开心跃动",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "f91a5d30ea3398a0e3d8180bc59b0892133f87b86d63421d59a928f71c66bd12",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus click interaction/scheduling"
+    },
+    {
+      "id": "action_004",
+      "label": "点击回应-挠痒咯咯笑",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "edb8bbbda4091b3d16c6016e4ff96d48a707a8755854b57edf341a74720f0d4f",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus click interaction/scheduling"
+    },
+    {
+      "id": "drag",
+      "label": "被鼠标拖拽悬空反馈",
+      "category": "drag",
+      "frames": 241,
+      "official_frames_sha256": "1d646ca7741d7505ca3f40d753ae7b443ef77b402edb9b78acd94b5fae961a91",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus drag interaction/scheduling"
+    },
+    {
+      "id": "idle",
+      "label": "待机呼吸休闲",
+      "category": "idle",
+      "frames": 241,
+      "official_frames_sha256": "3f98c2bbaaa6ae2b180c655b41269d5822bcab811e46a7c72cb04757c7f07e1e",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus idle interaction/scheduling"
+    },
+    {
+      "id": "action_013",
+      "label": "左转奔跑",
+      "category": "move",
+      "frames": 241,
+      "official_frames_sha256": "92153238dc95321b32631e4b2d4a620c510012f5b8e728de2ea9f3962a126bec",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus move interaction/scheduling"
+    },
+    {
+      "id": "action_014",
+      "label": "漂浮踏步",
+      "category": "move",
+      "frames": 241,
+      "official_frames_sha256": "026fe42202a764a2dbd9f2111ad395d03f2afceaa3f083e8fe9daa2f05b2bf55",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus move interaction/scheduling"
+    },
+    {
+      "id": "action_015",
+      "label": "螃蟹走路",
+      "category": "move",
+      "frames": 241,
+      "official_frames_sha256": "a997237c659b038b014e07773a0afc00418d1374eb5d3b25a44869d8a7e3f9a3",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus move interaction/scheduling"
+    },
+    {
+      "id": "action_105",
+      "label": "东张西望",
+      "category": "turn",
+      "frames": 241,
+      "official_frames_sha256": "430bf7b53e8f39b54d392da3810e6bed3979b9d500a0d35e471c7826b1c6c17d",
+      "fps": 24,
+      "normalized_rgba_and_complete_alpha": "PASS",
+      "trigger": "menu plus turn interaction/scheduling"
+    }
+  ],
+  "total_clips": 11,
+  "total_frames": 2651,
+  "normalization": "461x259 at inherited 72% scale; Lanczos, complete alpha crop; RGBA equality",
+  "status": "PASS"
+}

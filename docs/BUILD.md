@@ -1,35 +1,46 @@
-# Building locally
+# Build and verify
 
-Windows x64, Python 3.12 and the exact dependencies in `lite/requirements-lock.txt`
-were used. The public code-only checkout deliberately contains no character
-frames or icon. These commands require separately authorized local asset inputs;
-there is no automatic retrieval or redistribution workaround.
+Windows x64 and Python 3.12.10. The checked-in Core/Ultra images are the authorized
+non-commercial inputs, not a hidden dependency on a local Full tree or Git object.
+Retain their notices. The application has no asset downloader.
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r lite/requirements-lock.txt
-$env:DSH_TEST_EDITION = 'full'
+$env:DSH_TEST_EDITION = 'core'
+$env:QT_QPA_PLATFORM = 'offscreen'
 .venv\Scripts\python.exe -m pytest -q
 $env:DSH_TEST_EDITION = 'ultra'
 .venv\Scripts\python.exe -m pytest -q
 .venv\Scripts\python.exe -m ruff check lite
-powershell -NoProfile -File lite/build.ps1 -Edition full
+powershell -NoProfile -File lite/build.ps1 -Edition core
 powershell -NoProfile -File lite/build.ps1 -Edition ultra
-.venv\Scripts\python.exe lite/verify_bundle.py --edition full
-.venv\Scripts\python.exe lite/verify_bundle.py --edition ultra
+.venv\Scripts\python.exe lite/verify_bundle.py --edition core --dist dist/core-ultra
+.venv\Scripts\python.exe lite/verify_bundle.py --edition ultra --dist dist/core-ultra
 git diff --check
 ```
 
-`build.ps1` runs the selected tests, static checks, PyInstaller, package validation
-and ZIP creation. The two builds share a source commit and version, with separate
-work and output names. `-SkipTests` is for a build immediately following separately
-recorded passing tests; it is not a release-gate waiver. Existing single-edition
-`dist/DSH-Pet-Lite` artifacts are not overwritten.
+Builds use lite/DSH-Pet-Lite.spec, separate work paths and explicit embedded edition,
+version, source commit and manifest digest. Output is dist/core-ultra. -Python may
+select another isolated Python 3.12 environment; no absolute path is baked into
+the source instructions. -Output selects a separate staging directory.
 
-For code-only software tests, set `DSH_SYNTHETIC_TEST_ASSETS=1` and
-`QT_QPA_PLATFORM=offscreen`. The fixture creates test rectangles in pytest's
-temporary directory. Never describe those tests as real animation validation.
+The exact original core ZIP SHA-256 is in lite/core-source-map.json. Authorized
+source: https://github.com/MerZlin/dsh-pet-indesktop/releases/tag/assets-v1
+To audit it against the included normalized assets:
 
-Qt libraries are dynamically loaded from `_internal`. Compatible replacements
-may be used for modified-library debugging. The distribution notices and license
-texts are retained. See [asset and library distribution conditions](../ASSET_LICENSE.md).
+```powershell
+.venv\Scripts\python.exe lite/prepare_core.py --source path/to/core.zip --verify-only
+```
+
+Omit --verify-only and specify a new --output directory to regenerate the lossless
+frames with locked Pillow. Metadata, alpha bounds, every frame and source digests
+are checked. Ultra preserves the established three-action assets.
+
+CI uses real checked-in assets for both profiles, lint/tests/build/closure/ZIP CRC.
+Optional DSH_SYNTHETIC_TEST_ASSETS=1 is software-only test coverage, never animation
+acceptance. Offscreen checks do not prove desktop input or transparency.
+
+Release attachments are the same local final ZIP bytes validated on the desktop;
+CI rebuilds are independent checks and are not silently substituted. Complete
+corresponding LGPL sources and their hashes accompany the release.

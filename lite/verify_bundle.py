@@ -11,7 +11,7 @@ from PyInstaller.archive.readers import CArchiveReader
 root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--edition', choices=EDITIONS, required=True)
-parser.add_argument('--dist', type=Path, default=root / 'dist/dual')
+parser.add_argument('--dist', type=Path, default=root / 'dist/core-ultra')
 args = parser.parse_args()
 product = profile(args.edition)['product']
 bundle = args.dist / product
@@ -33,8 +33,12 @@ assert actual.keys() == expected.keys(), 'Resource closure mismatch'
 for name, path in expected.items():
     assert hashlib.sha256(path.read_bytes()).digest() == hashlib.sha256(actual[name].read_bytes()).digest(), name
 manifest = json.loads((bundled_assets / 'manifest.json').read_text(encoding='utf-8'))
-assert len(manifest['clips']) == (106 if args.edition == 'full' else 3)
-assert sum(c['frames'] for c in manifest['clips'].values()) == (25423 if args.edition == 'full' else 723)
+assert len(manifest['clips']) == (11 if args.edition == 'core' else 3)
+assert sum(c['frames'] for c in manifest['clips'].values()) == (2651 if args.edition == 'core' else 723)
+assert manifest['fps'] == 24
+if args.edition == 'core':
+    assert sorted(c['category'] for c in manifest['clips'].values()) == sorted(
+        ['idle', 'drag', 'turn'] + ['click']*5 + ['move']*3)
 files = list(bundle.rglob('*'))
 assert not [p for p in files if p.is_file() and (p.suffix.lower() in ('.onnx', '.webm', '.mp3')
                                                or 'ffmpeg' in p.name.lower())]
@@ -54,8 +58,13 @@ for name in ('LICENSE', 'THIRD_PARTY_NOTICES.md', 'licenses/LGPL-3.0-only.txt',
              'assets/manifest.json'):
     assert (bundle / '_internal' / name).is_file(), name
 result = {'edition': args.edition, 'identity': identity, 'modules': modules, 'qt_imports': pe_imports,
+          'asset_files_sha256': {n: hashlib.sha256(p.read_bytes()).hexdigest() for n, p in actual.items()},
+          'file_manifest': [{'path': p.relative_to(bundle).as_posix(), 'bytes': p.stat().st_size,
+                             'sha256': hashlib.sha256(p.read_bytes()).hexdigest()}
+                            for p in files if p.is_file()],
           'files': len([p for p in files if p.is_file()]),
           'bytes': sum(p.stat().st_size for p in files if p.is_file()),
           'forbidden_modules': bad}
-(root / f'benchmarks/dual-{args.edition}-bundle.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+(root / 'build').mkdir(exist_ok=True)
+(root / f'build/verified-{args.edition}-bundle.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
 print(json.dumps({k: result[k] for k in ('files', 'bytes', 'forbidden_modules')}))

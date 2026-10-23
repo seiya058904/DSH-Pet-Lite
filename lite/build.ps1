@@ -1,10 +1,11 @@
-param([Parameter(Mandatory)][ValidateSet('full','ultra')][string]$Edition,
-      [string]$Output = 'dist/dual', [switch]$SkipTests)
+param([Parameter(Mandatory)][ValidateSet('core','ultra')][string]$Edition,
+      [string]$Output = 'dist/core-ultra', [switch]$SkipTests,
+      [string]$Python = '')
 $ErrorActionPreference = 'Stop'
 $env:PYTHONUTF8 = '1'
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location -LiteralPath $root
-$python = Join-Path $root '.venv\Scripts\python.exe'
+if (-not $Python) { $Python = Join-Path $root '.venv\Scripts\python.exe' }
 if (-not (Test-Path -LiteralPath $python)) { throw 'Create the isolated .venv and install lite/requirements-build.txt first.' }
 $env:DSH_TEST_EDITION = $Edition
 if (-not $SkipTests) {

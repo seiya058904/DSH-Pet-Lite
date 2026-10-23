@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-EDITIONS = ('full', 'ultra')
+EDITIONS = ('core', 'ultra')
 VERSION = '1.0.0'
 
 
@@ -17,7 +17,7 @@ def profile(edition):
 
 def assets_for(edition):
     profile(edition)
-    return ROOT / ('assets' if edition == 'full' else 'assets-ultra')
+    return ROOT / ('assets-core' if edition == 'core' else 'assets-ultra')
 
 
 def build_identity():

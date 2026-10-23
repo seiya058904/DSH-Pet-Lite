@@ -1,22 +1,20 @@
-# Choose an edition
+# Core and Ultra
 
-| | Full Animation Lite | Ultra Lite |
-|---|---|---|
-| Best for | All original animation clips and local roaming | Basic interaction with a smaller disk footprint |
-| Animation | 106 clips / 25,423 frames | 3 clips / 723 frames |
-| Input | Click, drag, transparent pass-through, context menu | Same core input contract |
-| Roaming | Frame-driven, bounded movement and turns | Absent |
-| Runtime | Shared Python / Qt Core, Gui, Widgets | Same core, excludes roaming module |
-| Resources | Complete original restored library | Exact historical three-action assets |
-| Settings | `DSH-Pet-Lite-Full/settings.json` under LOCALAPPDATA | `DSH-Pet-Lite-Ultra/settings.json` under LOCALAPPDATA |
-| Public binary download | Blocked pending asset rights | Blocked pending asset rights |
+Core embeds only the official core package: 5 click, 3 move, idle, drag and turn,
+11 clips / 2,651 frames. Ultra embeds idle/click/drag only, 3 clips / 723 frames.
+The 106-clip Full edition and extra1-extra6 are historical local artifacts.
 
-Both run offline without Harness, a system Python installation, administrator
-rights, services, tasks or autostart. Both use one small layered window and stop
-the animation timer when paused or hidden. Hidden also releases the idle cache.
-Only run one edition for ordinary use; installing both does not require both to run.
+Both use shared app.py, explicit edition.py contracts and separate configuration
+roots. Core alone imports roaming.py and its fixed stride curves. One existing
+frame timer drives bounded movement; no extra polling timer or worker is added.
+The absent random category becomes idle (70/10/20 idle/turn/move). Click chooses
+one of the five reactions; every core clip also has a menu entry.
 
-Source code is shared, but the ZIPs and on-disk dependency/resource closures are
-independent. Ultra does not hide a copy of Full's library behind a setting.
-More animation content makes Full larger; this is a product trade-off, not a
-performance regression of Ultra. See [performance methodology](BENCHMARK_METHODOLOGY.md).
+Ultra's PyInstaller module archive excludes roaming.py. It contains neither Core
+movement data nor extra frames. verify_bundle.py checks the exact file set and every
+asset hash, PYZ imports, Qt PE dependency closure, counts and required licenses.
+Its JSON output includes the complete per-file manifest and dependency graph.
+
+Hot idle frames use at most 40 MiB decoded cache; action frames are transient.
+Hidden stops the timer and clears cache; pause stops the timer. Atomic writes occur
+on relevant user actions and shutdown. Only Core/Ultra are current build options.

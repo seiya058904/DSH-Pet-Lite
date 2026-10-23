@@ -1,80 +1,84 @@
 # DSH Pet Lite
 
-**One offline desktop companion. Two carefully separated editions.**
+**A small, offline desktop companion. Choose Core or Ultra.**
 
 Unofficial non-commercial derivative of [MerZlin/dsh-pet-indesktop](https://github.com/MerZlin/dsh-pet-indesktop).
 Animation origin: [PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet).
+OC **溟月**, artist **上善无形**, community-prepared animation.
 
-[Choose an edition](#choose-your-edition) · [Release status](#download--release-status) · [Benchmarks](docs/PERFORMANCE_REPORT.md) · [Build](docs/BUILD.md) · [Credits](#credits--licenses)
-
-> **Code-only public release.** Full and Ultra Windows packages have been built locally. Public character-binary redistribution is blocked pending clearer asset authorization. The public repository contains no character images, animation, executable packages or inherited Git history containing them.
+[Download v1.0.0](https://github.com/seiya058904/DSH-Pet-Lite/releases/tag/v1.0.0) · [Evidence](docs/PERFORMANCE_REPORT.md) · [Build](docs/BUILD.md) · [Licenses](ASSET_LICENSE.md)
 
 ## Choose your edition
 
-| | Full Animation Lite | Ultra Lite |
+| | Core | Ultra |
 |---|---|---|
-| Choose it for | All original animation clips and local roaming | Basic interaction and a compact install |
-| Animation | **106 clips · 25,423 frames** | **3 clips · 723 frames** |
-| Actions | Idle, click, drag, move, turn, random and visual events | Idle, click and drag |
-| Playback | Original 24 fps logical timeline | Original 24 fps logical timeline |
-| Portable ZIP, local build | **1,034.44 MB** | **55.62 MB** |
-| Public binary download | **Not published — rights gate** | **Not published — rights gate** |
+| Best for | The official basic animation set, with local movement | Essential interaction and the smallest package |
+| Included clips | **11 / 2,651 frames** | **3 / 723 frames** |
+| Actions | Idle, five click reactions, drag, three moves, turn | Idle, click, drag |
+| Logical playback | Original 24 fps | Original 24 fps |
+| Package size | About **123.4 MB** | About **53.6 MB** |
+| Download | [Core Windows x64 ZIP](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.0/DSH-Pet-Lite-Core-v1.0.0-win-x64-portable.zip) | [Ultra Windows x64 ZIP](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.0/DSH-Pet-Lite-Ultra-v1.0.0-win-x64-portable.zip) |
 
-Both provide a small transparent topmost window, native transparent-area input pass-through, click and drag interaction, tray controls, pause, hide and exit. Both work offline without DeepSeek Harness, system Python or administrator rights. They create no services, scheduled tasks or autostart entries.
+[SHA256SUMS](https://github.com/seiya058904/DSH-Pet-Lite/releases/download/v1.0.0/SHA256SUMS.txt)
 
-The code is shared; the packages are independent. Ultra physically excludes Full-only frames and its roaming module. Each edition has separate install/settings directories, shortcuts, build identity and checksums. Normally run only one.
+Both are self-contained: no Python installation, Harness, account, online service
+or administrator access is required. Each uses one small transparent topmost window
+with transparent-pixel input pass-through, click/drag, tray controls, pause, hide,
+exit, atomic settings and single-instance protection. No services or autostart.
 
-## Download & release status
+![Core on an owned test backdrop](docs/images/core-preview.png)
+*Actual Core candidate at 100% desktop scaling, captured only over the test backdrop.
+Character attribution and non-commercial conditions apply to this image too.*
 
-Public source and release notes are available through [GitHub Releases](https://github.com/seiya058904/DSH-Pet-Lite/releases). There are **no public Full/Ultra character ZIPs**. A code-only release is not a completed dual-binary release: **DUAL_BINARY_RELEASE_BLOCKED**.
+## Use it
 
-The local Windows artifacts are named:
+1. Unzip the chosen package into a writable folder.
+2. Run `DSH-Pet-Lite-Core.exe` or `DSH-Pet-Lite-Ultra.exe`.
+3. Click to interact, drag to move, or right-click for animations and controls.
+4. Double-click its tray icon to show it again after hiding. Choose **Exit** to close.
 
-- `DSH-Pet-Lite-Full-v1.0.0-win-x64-portable.zip`
-- `DSH-Pet-Lite-Ultra-v1.0.0-win-x64-portable.zip`
+Run one edition at a time. Settings and install directories are separate. The
+executables are unsigned. [Install, update and uninstall](docs/INSTALL.md).
 
-These identify local validation outputs, not available public downloads.
-[Install and uninstall](docs/INSTALL.md) · [Edition details](docs/EDITION_COMPARISON.md) · [Why binaries are blocked](ASSET_LICENSE.md)
+## What is actually smaller?
 
-## Evidence, with boundaries
+The official v4.4.0 **348.97 MB base ZIP contains 11 clips**, not all 106 clips
+supported by the upstream application. Its other 95 animations are separate packs.
+Core matches the eleven-clip scope. It removes unrelated application dependencies
+and includes lossless frames cropped at the inherited 72% display scale.
+Ultra deliberately covers only three clips; its size is not a same-content
+comparison with official Core. Historical Full 106-clip experiments are retired.
 
-Every Full stored frame was checked against the fixed official frame pack after the inherited 72% resize and transparent crop. Every Ultra encoded frame was checked against the previous three-animation Lite commit. See the [clip-by-clip report](docs/ANIMATION_PARITY.md).
+The latest packaging change removes unused Qt UI translations (the application
+never loads a QTranslator), saving about 2 MB compressed and 7 MB installed per
+edition. Smaller decoded caches and stronger encoding were tested and rejected
+when the benefit was too small or repeated decoding increased. No frame deletion,
+fps reduction or unverified lossy encoding is used.
 
-Both editions passed real pointer transparency, click, drag, menu-exit and relaunch checks at 100% desktop scaling. Failed probes are retained locally and summarized publicly. Offscreen CI uses synthetic rectangles and verifies software behavior only; it cannot establish visual, input or package acceptance.
+[Measurements and uncertainty](docs/PERFORMANCE_REPORT.md) · [Core frame audit](docs/CORE_ANIMATION_PARITY.md) · [Architecture](docs/EDITION_COMPARISON.md)
 
-Performance comparisons distinguish official full-animation no-chat (A), previous three-animation Lite (B), new Full (C), and new Ultra (D). CPU cycle counts are not CPU percentages or power measurements. See the [methodology](docs/BENCHMARK_METHODOLOGY.md) and [report](docs/PERFORMANCE_REPORT.md).
+## Reproduce
 
-## Development
+Windows x64, Python 3.12, exact versions in `lite/requirements-lock.txt`.
+The repository includes the authorized Core/Ultra asset inputs and their hashes.
+The application imports standard Python and Qt Core/Gui/Widgets only; no upstream
+chat, OCR, agent, updater, audio or network stack.
 
-Windows x64 · Python 3.12 · PySide6 Essentials / Qt 6.12.0 · PyInstaller onedir.
-The product imports only Python standard-library modules and Qt Core/Gui/Widgets. It imports no upstream chat, agents, OCR, audio, updater or network modules.
+[Build and test](docs/BUILD.md) · [Methodology](docs/BENCHMARK_METHODOLOGY.md) · [Release checklist](docs/RELEASE_CHECKLIST.md)
 
-```powershell
-python -m venv .venv
-.venv\Scripts\python.exe -m pip install -r lite/requirements-lock.txt
-$env:DSH_TEST_EDITION = 'full' # repeat with ultra
-$env:DSH_SYNTHETIC_TEST_ASSETS = '1' # public code-only software tests
-$env:QT_QPA_PLATFORM = 'offscreen'
-.venv\Scripts\python.exe -m pytest -q
-.venv\Scripts\python.exe -m ruff check lite
-```
+## Boundaries and credits
 
-[Build](docs/BUILD.md) · [Build matrix](docs/EDITION_BUILD_MATRIX.md) · [Changelog](CHANGELOG.md)
+- Code is MIT under retained upstream notices. Character assets are separate,
+  non-commercial and attribution-bound; they are **not relicensed as MIT**.
+- Release authorization is the project owner's explicit confirmation; no signed
+  third-party permission document or precise Creative Commons version is invented.
+- Qt/PySide6/Shiboken source archives accompany the binaries in the same Release,
+  with license texts, checksums and replacement/debugging rights.
+- Only 100% desktop scaling is physically covered unless a release evidence record
+  explicitly adds coverage. 125%/150%, 4K, multiple monitors, physical network
+  disconnection, GPU, watts and monitor Present are not claimed as tested.
+- CPU process-time counters have been unreliable on the test host. CPU cycles and
+  thread-time observations are not claimed as validated CPU% or power savings.
+- Core offers bounded movement/turning, not upstream throw physics or extra animations.
 
-## Known limits
-
-- Public character binaries and screenshots are withheld. Source alone cannot recreate the character without authorized assets.
-- Supported logical character size is 72%; arbitrary enlargement is not offered.
-- 125%/150% DPI, 4K, multi-monitor hot-plug, physical network disconnection, GPU, watts and monitor Present cadence have not been verified.
-- Full includes every restored clip, but does not reproduce upstream throw physics, arbitrary multi-loop movement or service-dependent behaviors.
-- Native CPU-time accounting is unreliable on the host; no zero-CPU claim. Local executables are unsigned.
-
-## Credits & licenses
-
-Code is MIT licensed under the retained upstream notices. **Character material is separate and is not relicensed as MIT.** OC **溟月** is attributed to artist **上善无形**; animation was prepared by the source community. Non-commercial use and attribution restrictions remain applicable.
-
-- Technical upstream: [MerZlin/dsh-pet-indesktop](https://github.com/MerZlin/dsh-pet-indesktop), fixed v4.4.0.
-- Animation and earlier project origin: [PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet).
-- [Code license](LICENSE) · [Asset gate](ASSET_LICENSE.md) · [Third-party notices](THIRD_PARTY_NOTICES.md).
-
-Independently maintained; not an official release of either source project or DeepSeek. Report software issues through this repository's Issues.
+[Asset terms](ASSET_LICENSE.md) · [Code license](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md) · [Corresponding library source](lite/licenses/SOURCE-DELIVERY.md)

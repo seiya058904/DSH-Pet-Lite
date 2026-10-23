@@ -1,0 +1,82 @@
+{
+  "core_zip_sha256": "64d81c15c2ea85e1ae214490502504db084a650723056afa1d010399383e1c8c",
+  "clips": {
+    "6b7176b98408cb649d1d37b6a6222a21aa6b128187e3e0b2d18550d35ab81064": {
+      "id": "action_000",
+      "label": "点击回应-傲娇生气",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "ffac53163d2f3220aaaf2e80e9bfc6ff688e1db719690cec479644fcd791f7c8"
+    },
+    "48cd729ccdcf746369942ea954d242e9afdd5643e1dac3827fa5e67450eb8776": {
+      "id": "action_001",
+      "label": "点击回应-元气挥手",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "cc3ca29087109b4dba495617baf2102518312786e0eef3a5e5859fbc6454f4f6"
+    },
+    "a04968bbc46d1ebea07f81e5dabd93b0b67a9d07f1371e9887b33075134ad00d": {
+      "id": "action_002",
+      "label": "点击回应-害羞惊讶",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "4905e419d0144cb2a64262de77ce7904fa7d82dfac5e452a7605a78ea9798c2b"
+    },
+    "86dcb0c3dd7b651de9c107e927d57a5c4224599101706dbdcc782fa48bcd0ad7": {
+      "id": "click",
+      "label": "点击回应-开心跃动",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "f91a5d30ea3398a0e3d8180bc59b0892133f87b86d63421d59a928f71c66bd12"
+    },
+    "f228279219f4084323ca1bfef1604f7c77bb3f505d45a8d1747b5ac3f9f2393b": {
+      "id": "action_004",
+      "label": "点击回应-挠痒咯咯笑",
+      "category": "click",
+      "frames": 241,
+      "official_frames_sha256": "edb8bbbda4091b3d16c6016e4ff96d48a707a8755854b57edf341a74720f0d4f"
+    },
+    "31373a86026636eecc890db763760309360310eb095cf5575b13c9ca2a6cc80e": {
+      "id": "drag",
+      "label": "被鼠标拖拽悬空反馈",
+      "category": "drag",
+      "frames": 241,
+      "official_frames_sha256": "1d646ca7741d7505ca3f40d753ae7b443ef77b402edb9b78acd94b5fae961a91"
+    },
+    "deb965d05a85dacf5ff4a20faa757846f0d11679598c3ec578a5571487660395": {
+      "id": "idle",
+      "label": "待机呼吸休闲",
+      "category": "idle",
+      "frames": 241,
+      "official_frames_sha256": "3f98c2bbaaa6ae2b180c655b41269d5822bcab811e46a7c72cb04757c7f07e1e"
+    },
+    "79882aedd7b77caaacce1a34dece68e2f001a3dbfa5f9d049c1ce2fc04518d52": {
+      "id": "action_013",
+      "label": "左转奔跑",
+      "category": "move",
+      "frames": 241,
+      "official_frames_sha256": "92153238dc95321b32631e4b2d4a620c510012f5b8e728de2ea9f3962a126bec"
+    },
+    "7dee1c14672f1f99bebe5e6f1a52d6664b851ed95f9958ac6c12b753a5e5cc81": {
+      "id": "action_014",
+      "label": "漂浮踏步",
+      "category": "move",
+      "frames": 241,
+      "official_frames_sha256": "026fe42202a764a2dbd9f2111ad395d03f2afceaa3f083e8fe9daa2f05b2bf55"
+    },
+    "5696b0878be38cc450d6eaace837aef1c1b5834f1382bc6c11c2de582f284673": {
+      "id": "action_015",
+      "label": "螃蟹走路",
+      "category": "move",
+      "frames": 241,
+      "official_frames_sha256": "a997237c659b038b014e07773a0afc00418d1374eb5d3b25a44869d8a7e3f9a3"
+    },
+    "a20ed02ccc5e72075a3ca83fabb57d9aac5ded699f52d00ec6de72069799fcd5": {
+      "id": "action_105",
+      "label": "东张西望",
+      "category": "turn",
+      "frames": 241,
+      "official_frames_sha256": "430bf7b53e8f39b54d392da3810e6bed3979b9d500a0d35e471c7826b1c6c17d"
+    }
+  }
+}

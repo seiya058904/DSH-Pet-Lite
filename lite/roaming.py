@@ -1,6 +1,6 @@
-"""Full-only, frame-driven roaming; no additional timers or background work.
+"""Core-only, frame-driven roaming; no additional timers or background work.
 
-Uses v4.4.0's calibrated stride curves and 30/10/20/40 category weights.
+Uses v4.4.0's calibrated stride curves. The absent random category becomes idle.
 One complete stride per move, bounded to the current work area.
 """
 import json
@@ -50,7 +50,7 @@ class Roaming:
             return self.prepare(name)
         if name != 'idle':
             return self.prepare('idle')
-        category = self.pet.rng.choices(['idle', 'turn', 'move', 'random'], [30, 10, 20, 40])[0]
+        category = self.pet.rng.choices(['idle', 'turn', 'move'], [70, 10, 20])[0]
         return self.prepare(self.pet.rng.choice(self.groups[category]))
 
     def advance(self):

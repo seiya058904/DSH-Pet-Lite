@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "packages": [
+    {
+      "package": "official_base",
+      "sha256": "fa049e31f1b0d184f77639a749f239b55b48c64b2ba14b59d08b3897168b55aa",
+      "bytes": 348968895,
+      "clips": 11,
+      "frames": 2651,
+      "source_clip_sha256": [
+        "31373a86026636eecc890db763760309360310eb095cf5575b13c9ca2a6cc80e",
+        "48cd729ccdcf746369942ea954d242e9afdd5643e1dac3827fa5e67450eb8776",
+        "5696b0878be38cc450d6eaace837aef1c1b5834f1382bc6c11c2de582f284673",
+        "6b7176b98408cb649d1d37b6a6222a21aa6b128187e3e0b2d18550d35ab81064",
+        "79882aedd7b77caaacce1a34dece68e2f001a3dbfa5f9d049c1ce2fc04518d52",
+        "7dee1c14672f1f99bebe5e6f1a52d6664b851ed95f9958ac6c12b753a5e5cc81",
+        "86dcb0c3dd7b651de9c107e927d57a5c4224599101706dbdcc782fa48bcd0ad7",
+        "a04968bbc46d1ebea07f81e5dabd93b0b67a9d07f1371e9887b33075134ad00d",
+        "a20ed02ccc5e72075a3ca83fabb57d9aac5ded699f52d00ec6de72069799fcd5",
+        "deb965d05a85dacf5ff4a20faa757846f0d11679598c3ec578a5571487660395",
+        "f228279219f4084323ca1bfef1604f7c77bb3f505d45a8d1747b5ac3f9f2393b"
+      ]
+    },
+    {
+      "package": "official_core",
+      "sha256": "64d81c15c2ea85e1ae214490502504db084a650723056afa1d010399383e1c8c",
+      "bytes": 144352172,
+      "clips": 11,
+      "frames": 2651,
+      "source_clip_sha256": [
+        "31373a86026636eecc890db763760309360310eb095cf5575b13c9ca2a6cc80e",
+        "48cd729ccdcf746369942ea954d242e9afdd5643e1dac3827fa5e67450eb8776",
+        "5696b0878be38cc450d6eaace837aef1c1b5834f1382bc6c11c2de582f284673",
+        "6b7176b98408cb649d1d37b6a6222a21aa6b128187e3e0b2d18550d35ab81064",
+        "79882aedd7b77caaacce1a34dece68e2f001a3dbfa5f9d049c1ce2fc04518d52",
+        "7dee1c14672f1f99bebe5e6f1a52d6664b851ed95f9958ac6c12b753a5e5cc81",
+        "86dcb0c3dd7b651de9c107e927d57a5c4224599101706dbdcc782fa48bcd0ad7",
+        "a04968bbc46d1ebea07f81e5dabd93b0b67a9d07f1371e9887b33075134ad00d",
+        "a20ed02ccc5e72075a3ca83fabb57d9aac5ded699f52d00ec6de72069799fcd5",
+        "deb965d05a85dacf5ff4a20faa757846f0d11679598c3ec578a5571487660395",
+        "f228279219f4084323ca1bfef1604f7c77bb3f505d45a8d1747b5ac3f9f2393b"
+      ]
+    }
+  ],
+  "correction": "Official 348.97 MB base ZIP embeds 11 clips, not 106. Full remains historical."
+}

@@ -18,7 +18,7 @@ from edition import EDITIONS, profile
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--edition', choices=EDITIONS, required=True)
-    parser.add_argument('--source-root', default='dist/dual-final')
+    parser.add_argument('--source-root', default='dist/core-ultra')
     args = parser.parse_args()
     product = profile(args.edition)['product']
     programs = (Path(os.environ['LOCALAPPDATA'])/'Programs').resolve()

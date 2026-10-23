@@ -15,7 +15,7 @@ def main():
     data['source_sha'] = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
     inputs = ['lite/app.py', 'lite/edition.py', 'lite/roaming.py', 'lite/DSH-Pet-Lite.spec',
               'lite/requirements.txt', 'lite/requirements-build.txt', 'lite/licenses',
-              'lite/assets' if args.edition == 'full' else 'lite/assets-ultra',
+              'lite/assets-core' if args.edition == 'core' else 'lite/assets-ultra',
               'LICENSE', 'THIRD_PARTY_NOTICES.md']
     data['dirty'] = bool(subprocess.check_output(['git', 'status', '--porcelain', '--', *inputs]))
     data['manifest_sha256'] = hashlib.sha256((assets_for(args.edition)/'manifest.json').read_bytes()).hexdigest()

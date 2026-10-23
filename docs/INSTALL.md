@@ -1,43 +1,33 @@
-# Install, switch, update and uninstall
+# Install, switch and remove
 
-Public character binaries are currently **not published**. The following describes
-the locally built, personally used editions; it is not a public download promise.
+The portable ZIP runs directly after extraction. Start the named Core or Ultra EXE.
+No Python, Harness, network account, services or administrator access is required.
+Run one pet at a time; exit the current pet before switching.
 
-Unzip either independent portable archive and run its named executable. No system
-Python, Harness or online account is required. Run one edition at a time for
-ordinary use. The binaries are unsigned; code signing was not performed.
-
-For a per-user installation from the source workspace:
+For a per-user install from the source checkout and verified build:
 
 ```powershell
-powershell -NoProfile -File lite/install.ps1 -Edition full
-powershell -NoProfile -File lite/install.ps1 -Edition ultra
+powershell -NoProfile -File lite/install.ps1 -Edition core -SourceRoot dist/core-ultra
+powershell -NoProfile -File lite/install.ps1 -Edition ultra -SourceRoot dist/core-ultra
 ```
 
-The installer refuses an existing destination or shortcut. It creates separate
-Desktop and Start Menu links named **DSH Pet Lite Full** / **DSH Pet Lite Ultra**.
-Install directories are `%LOCALAPPDATA%/Programs/DSH-Pet-Lite-Full` and
-`%LOCALAPPDATA%/Programs/DSH-Pet-Lite-Ultra`. Settings are stored separately under
-`%LOCALAPPDATA%/DSH-Pet-Lite-Full` and `%LOCALAPPDATA%/DSH-Pet-Lite-Ultra`.
+Each creates its own Desktop/Start Menu shortcut and installs under
+%LOCALAPPDATA%/Programs/DSH-Pet-Lite-Core or DSH-Pet-Lite-Ultra. Settings are separate
+in %LOCALAPPDATA%/DSH-Pet-Lite-Core and DSH-Pet-Lite-Ultra. No upstream configuration
+is silently migrated. Existing destinations or shortcuts are preserved/refused.
 
-The legacy `DSH-Pet-Lite` install and settings are preserved. No silent migration
-is attempted. The old three-animation backup is retained as a rollback baseline.
-Switch by exiting the current edition from its menu, then launching the other link.
+Updates through lite/update_edition.py require the old edition to be stopped and
+all installation files to match the ownership manifest. Unknown/modified files or
+reparse points cause refusal. The previous install and shortcuts are backed up,
+and a failed install restores them. Do not remove rollback folders blindly.
 
-To uninstall, exit that edition and run its installed `Uninstall-DSH-Pet-Lite.ps1`.
-Only ownership-listed files with matching hashes are removed. Modified or unknown
-files remain. Reparse points and paths outside the exact edition directory are
-rejected. Settings remain unless `-RemoveConfig` is explicitly confirmed.
-Portable folders have no installed ownership marker and are not accepted by this
-uninstaller. No services, tasks, autostart or system power settings are created.
+To uninstall, exit the pet and run its installed Uninstall-DSH-Pet-Lite.ps1. It
+accepts only the exact owned per-user edition directory, checks hashes and removes
+only unchanged listed files and verified shortcuts. Empty directories are removed
+without recursive deletion. Settings remain by default. Portable directories
+without an installed ownership marker are not accepted by that script.
 
-Updates must preserve a verified rollback copy and existing settings. An owned
-installation can be validated and backed up with `lite/update_edition.py`; it
-refuses running processes or changed payload files. Inspect its update report
-before considering any retained backup disposable.
-
-Both final editions were actually uninstalled using their installed scripts,
-reinstalled from the verified local packages, and passed pointer/menu-exit/relaunch
-checks again. The executable hashes remained identical to the completed soak builds.
-The legacy full installation and older three-animation rollback installation were
-left in place. See [install validation](../benchmarks/public/install-validation.json).
+The requesting user's final machine installation is Core only, overriding the
+earlier document's default Ultra choice. Ultra is still validated and published
+as an independent portable edition. Historical Full archives and user settings
+are retained outside the current installation flow.

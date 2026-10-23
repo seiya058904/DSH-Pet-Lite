@@ -28,6 +28,7 @@ def sample(pid):
     values = dict(monotonic=time.perf_counter(), native_cpu_s=0, psutil_cpu_s=0,
                   cycles=0, private_bytes=0, working_set=0, threads=0, handles=0,
                   read_bytes=0, write_bytes=0, processes=0, connections=0,
+                  thread_cpu_s=0, voluntary_context_switches=0, involuntary_context_switches=0,
                   logical_cpus=os.cpu_count(), system_cpu_pct=psutil.cpu_percent())
     for proc in [root, *root.children(recursive=True)]:
         handle = None
@@ -44,6 +45,10 @@ def sample(pid):
                 raise ctypes.WinError(ctypes.get_last_error())
             values['native_cpu_s'] += filetime_seconds(system) + filetime_seconds(user)
             values['psutil_cpu_s'] += sum(proc.cpu_times()[:2])
+            values['thread_cpu_s'] += sum(t.user_time+t.system_time for t in proc.threads())
+            switches = proc.num_ctx_switches()
+            values['voluntary_context_switches'] += switches.voluntary
+            values['involuntary_context_switches'] += switches.involuntary
             values['cycles'] += cycles.value
             memory = proc.memory_info()
             values['private_bytes'] += memory.private

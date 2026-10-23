@@ -1,5 +1,5 @@
-param([Parameter(Mandatory)][ValidateSet('full','ultra')][string]$Edition,
-      [string]$SourceRoot = 'dist/dual')
+param([Parameter(Mandatory)][ValidateSet('core','ultra')][string]$Edition,
+      [string]$SourceRoot = 'dist/core-ultra')
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $suffix = (Get-Culture).TextInfo.ToTitleCase($Edition)

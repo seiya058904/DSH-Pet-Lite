@@ -21,19 +21,11 @@ def synthetic_assets_for_code_only_ci(tmp_path_factory):
     import edition
     original = edition.ROOT
     root = tmp_path_factory.mktemp('synthetic-assets')
-    full = {f'action_{i:03}': 'random' for i in range(106)}
-    for i in range(5):
-        full[f'action_{i:03}'] = 'click'
-    full['click'] = full.pop('action_000')
-    full['idle'] = full.pop('action_010')
-    full['idle'] = 'idle'
-    full['drag'] = full.pop('action_011')
-    full['drag'] = 'drag'
-    for i in (13, 14, 15):
-        full[f'action_{i:03}'] = 'move'
-    full['action_105'] = 'turn'
-    for selected, names in [('full', full), ('ultra', dict(idle='idle', click='click', drag='drag'))]:
-        assets = root/('assets' if selected == 'full' else 'assets-ultra')
+    full = dict(idle='idle', drag='drag', click='click', action_000='click', action_001='click',
+                action_002='click', action_004='click', action_013='move', action_014='move',
+                action_015='move', action_105='turn')
+    for selected, names in [('core', full), ('ultra', dict(idle='idle', click='click', drag='drag'))]:
+        assets = root/('assets-core' if selected == 'core' else 'assets-ultra')
         assets.mkdir()
         clips = {}
         for name, category in names.items():
@@ -46,10 +38,10 @@ def synthetic_assets_for_code_only_ci(tmp_path_factory):
                 image.save(directory/f'{i:04}.webp', lossless=True)
             clips[name] = {'category': category, 'frames': frames, 'label': name,
                            'offsets': [[0, 0]]*frames}
-        manifest = {'size': [461, 259] if selected == 'full' else [201, 248],
+        manifest = {'size': [461, 259] if selected == 'core' else [201, 248],
                     'fps': 24, 'format': 'webp', 'scale': .72, 'clips': clips}
         (assets/'manifest.json').write_text(json.dumps(manifest), encoding='utf-8')
-        if selected == 'full':
+        if selected == 'core':
             curves = {name: {'stride': 240, 'curve': [0]*51+[min(1, (i-50)/60) for i in range(51, 241)]}
                       for name, category in names.items() if category == 'move'}
             (assets/'move_strides.json').write_text(json.dumps(curves), encoding='utf-8')

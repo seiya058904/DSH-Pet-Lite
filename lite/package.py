@@ -11,7 +11,7 @@ from edition import EDITIONS, VERSION, profile
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--edition', choices=EDITIONS, required=True)
-    parser.add_argument('--dist', type=Path, default=Path('dist/dual'))
+    parser.add_argument('--dist', type=Path, default=Path('dist/core-ultra'))
     args = parser.parse_args()
     product = profile(args.edition)['product']
     bundle = args.dist/product

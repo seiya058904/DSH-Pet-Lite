@@ -1,0 +1,126 @@
+{
+  "core": {
+    "webp_method6": {
+      "sample_frames": 11,
+      "original_bytes": 409786,
+      "method6_bytes": 396672,
+      "savings_pct": 3.2002069372794595,
+      "encode_seconds": 0.7717515999975149,
+      "pixel_equal": true
+    },
+    "stored_container": {
+      "files_seconds": [
+        0.009686999997938983,
+        0.004956999997375533,
+        0.0047517999992123805,
+        0.005308500003593508,
+        0.005459400003019255
+      ],
+      "archive_seconds": [
+        0.017399000003933907,
+        0.004753900000650901,
+        0.0048977999977068976,
+        0.005109500001708511,
+        0.00491409999813186
+      ],
+      "median_files": 0.005308500003593508,
+      "median_archive": 0.00491409999813186
+    },
+    "idle_cache": [
+      {
+        "limit_MiB": 40,
+        "cached_bytes": 29278220,
+        "decodes": 241,
+        "seconds": [
+          0.11974139999801992,
+          0.1149197999984608,
+          0.11562170000252081
+        ]
+      },
+      {
+        "limit_MiB": 16,
+        "cached_bytes": 16727152,
+        "decodes": 449,
+        "seconds": [
+          0.20307119999779388,
+          0.20096360000025015,
+          0.2058240000042133
+        ]
+      },
+      {
+        "limit_MiB": 0,
+        "cached_bytes": 0,
+        "decodes": 723,
+        "seconds": [
+          0.31580140000005485,
+          0.3166597000017646,
+          0.31667129999550525
+        ]
+      }
+    ],
+    "manifest_sha256": "f1edb865cfa1d8c31570a15a2b8cbda607240bb173ea1514ab2d4428ad618a9c",
+    "scope": "Build-only warm-file-cache microbenchmark; not independent installed performance"
+  },
+  "ultra": {
+    "webp_method6": {
+      "sample_frames": 15,
+      "original_bytes": 577174,
+      "method6_bytes": 559688,
+      "savings_pct": 3.029588997425381,
+      "encode_seconds": 1.0102147000070545,
+      "pixel_equal": true
+    },
+    "stored_container": {
+      "files_seconds": [
+        0.006995999996433966,
+        0.00680100000317907,
+        0.006539299996802583,
+        0.006709599998430349,
+        0.006782000004022848
+      ],
+      "archive_seconds": [
+        0.014424499997403473,
+        0.00648390000424115,
+        0.00651310000102967,
+        0.006402300001354888,
+        0.006499900002381764
+      ],
+      "median_files": 0.006782000004022848,
+      "median_archive": 0.006499900002381764
+    },
+    "idle_cache": [
+      {
+        "limit_MiB": 40,
+        "cached_bytes": 29244828,
+        "decodes": 241,
+        "seconds": [
+          0.11644479999813484,
+          0.11422540000057779,
+          0.11329200000182027
+        ]
+      },
+      {
+        "limit_MiB": 16,
+        "cached_bytes": 16706180,
+        "decodes": 449,
+        "seconds": [
+          0.20172679999814136,
+          0.1996839000057662,
+          0.20558960000198567
+        ]
+      },
+      {
+        "limit_MiB": 0,
+        "cached_bytes": 0,
+        "decodes": 723,
+        "seconds": [
+          0.3157061000019894,
+          0.33040830000390997,
+          0.32103120000101626
+        ]
+      }
+    ],
+    "manifest_sha256": "72cdde00308098afe7982fb49d2643f52fe1b4a79387dc7e3498c570ca14de90",
+    "scope": "Build-only warm-file-cache microbenchmark; not independent installed performance"
+  }
+}

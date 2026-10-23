@@ -2,7 +2,7 @@ param([switch]$RemoveConfig)
 $ErrorActionPreference = 'Stop'
 $target = [IO.Path]::GetFullPath($PSScriptRoot)
 $identity = Get-Content -LiteralPath (Join-Path $target '_internal/build-info.json') -Raw -Encoding UTF8 | ConvertFrom-Json
-if ($identity.edition -notin @('full','ultra')) { throw 'Unknown edition' }
+if ($identity.edition -notin @('core','ultra')) { throw 'Unknown edition' }
 $suffix = (Get-Culture).TextInfo.ToTitleCase($identity.edition)
 $product = "DSH-Pet-Lite-$suffix"
 $displayName = "DSH Pet Lite $suffix"

@@ -1,14 +1,18 @@
 # Changelog
 
-## 1.0.0 — local dual-edition build / public code-only release
+## 1.0.0 — Core and Ultra
 
-- Retain the existing 106-clip, 25,423-frame Full restoration from ef5bfb66.
-- Restore the exact previous 723-frame Ultra asset baseline from 863353c5.
-- Introduce explicit editions, independent package closures, install/config identities
-  and embedded version/source/manifest fingerprints.
-- Add bounded Full roaming using fixed-upstream stride curves and completed turns.
-- Stop safely on missing action frames, retaining the last valid image.
-- Verify real pointer pass-through, drag, menu exit and relaunch per edition.
-- Retain failed experiments and distinguish CPU-time anomalies from cycle data.
-- Publish source through a sanitized history without character material. Public
-  dual binaries remain blocked by asset redistribution and library-source delivery gates.
+- Core is the official eleven-animation base set (2,651 frames), with bounded
+  movement and turns. Ultra retains three animations (723 frames).
+- Both editions are standalone and have separate resources, identity and settings.
+- Remove unused Qt translation payloads without changing images or playback.
+- Preserve lossless frames and the original 24 fps timeline; keep bounded idle cache.
+- Add source delivery for LGPL libraries and authorized non-commercial asset terms.
+- Correct the previous comparison: the official 348.97 MB base ZIP embeds eleven
+  clips; the other 95 upstream animations use separate packs.
+
+## Historical v1.0.0-code-only
+
+The prior prerelease remains unchanged as history. It had no public binary packages
+and discussed Full 106 / Ultra 3 local experiments. Its official-base full-library
+label was incorrect and is superseded by the current audited scope.

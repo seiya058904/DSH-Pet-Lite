@@ -1,4 +1,4 @@
-# DSH Pet Lite: personal local derivative, not an official upstream release
+# DSH Pet Lite: non-commercial derivative, not an official upstream release
 
 Upstream code: https://github.com/MerZlin/dsh-pet-indesktop
 Fixed tag v4.4.0, 59c8bda3d1078155564267fbcb34fff9d2d80aff. MIT; see included LICENSE.
@@ -11,7 +11,7 @@ the origin GitHub address in every presentation/distribution of a derivative.
 This package is only for the requesting user's local noncommercial use. No
 commercial rights or right to publish are asserted. The animation is the actual
 blue-haired character in the fixed upstream sources, not a whale replacement.
-Full includes all 106 clips; Ultra includes idle, click-happy and drag only.
+Core includes the official 11 core clips; Ultra includes idle, click-happy and drag only.
 Transparent margins were cropped and frames resized to 72% with Lanczos,
 then saved as lossless RGBA WebP. See assets/manifest.json and build-info.json
 for the actual edition, complete logical frame counts and source identity.
@@ -44,3 +44,5 @@ No upstream sounds, OCR engines/models, fonts, network clients, FFmpeg or
 multimedia binaries are included in Lite. The retained complete upstream
 THIRD_PARTY_NOTICES.md describes upstream components; its inclusion does not
 mean those omitted components are present in this package.
+
+Complete corresponding library source archives accompany this Release. See SOURCE-DELIVERY.md.

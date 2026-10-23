@@ -32,10 +32,11 @@ def wait_for(predicate, seconds=20):
     raise TimeoutError('Expected installed process state was not reached')
 
 
-def run(edition, duration):
+def run(edition, duration, executable=None):
     product = profile(edition)['product']
-    exe = Path(os.environ['LOCALAPPDATA'])/'Programs'/product/f'{product}.exe'
-    out = ROOT/'benchmarks/dual-local'/f'{edition}-soak-{time.time_ns()}'
+    exe = executable or Path(os.environ['LOCALAPPDATA'])/'Programs'/product/f'{product}.exe'
+    exe = exe.resolve()
+    out = ROOT/'benchmarks/v3-local'/f'{edition}-soak-{time.time_ns()}'
     out.mkdir(parents=True, exist_ok=False)
     ready, metrics = out/'ready.json', out/'paints.json'
     statefile = Path(str(ready)+'.state.json')
@@ -115,5 +116,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--edition', choices=EDITIONS, required=True)
     parser.add_argument('--visible-seconds', type=int, default=1800)
+    parser.add_argument('--exe', type=Path)
     args = parser.parse_args()
-    run(args.edition, args.visible_seconds)
+    run(args.edition, args.visible_seconds, args.exe)

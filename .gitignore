@@ -4,6 +4,4 @@ __pycache__/
 .ruff_cache/
 build/
 dist/
-lite/assets/
-lite/assets-ultra/
-benchmarks/dual-local/
+benchmarks/v3-local/

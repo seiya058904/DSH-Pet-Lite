@@ -1,4 +1,4 @@
-"""Installed Full/Ultra Win32 pointer acceptance with an owned receiver window.
+"""Installed Core/Ultra Win32 pointer acceptance with an owned receiver window.
 
 Native input is scoped by live WindowFromPoint ownership before each gesture.
 Retains every run, including failures. No screenshot of unrelated desktop content.
@@ -40,10 +40,14 @@ def pointer(x, y, pid, right=False):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--edition', choices=EDITIONS, required=True)
+    parser.add_argument('--activate-before-click', action='store_true')
+    parser.add_argument('--physical-tray', action='store_true')
+    parser.add_argument('--exe', type=Path)
     args = parser.parse_args()
     product = profile(args.edition)['product']
-    exe = Path(os.environ['LOCALAPPDATA'])/'Programs'/product/f'{product}.exe'
-    out = ROOT/'benchmarks/dual-local'/f'{args.edition}-gui-{time.time_ns()}'
+    exe = args.exe or Path(os.environ['LOCALAPPDATA'])/'Programs'/product/f'{product}.exe'
+    exe = exe.resolve()
+    out = ROOT/'benchmarks/v3-local'/f'{args.edition}-gui-{time.time_ns()}'
     out.mkdir(parents=True)
     config = out/'config'
     config.mkdir()
@@ -57,7 +61,9 @@ def main():
     process = None
     receiver = None
     result = {'edition': args.edition, 'checks': {}, 'exe_sha256': hashlib.sha256(exe.read_bytes()).hexdigest(),
-              'method': 'Win32 real cursor and mouse input; test messages for state/pause/hide; Qt tray callback for restore'}
+              'method': 'Win32 real cursor/mouse input; test messages for state/pause/hide; '+
+                        ('physical taskbar icon for restore/exit' if args.physical_tray else 'Qt tray callback for restore'),
+              'activation_before_opaque_click': args.activate_before_click}
     try:
         def receiver_windows():
             ids = [backdrop.pid, *[p.pid for p in psutil.Process(backdrop.pid).children(recursive=True)]]
@@ -108,8 +114,9 @@ def main():
         record('transparent_corner_delivers_real_click_to_receiver', events.exists() and len(events.read_text().splitlines()) == 1)
         user.SetWindowPos(receiver['hwnd'], -2, 0, 0, 0, 0, 0x13)
         user.SetWindowPos(hwnd, -1, 0, 0, 0, 0, 0x13)
-        user.SetForegroundWindow(hwnd)
-        time.sleep(.3)
+        if args.activate_before_click:
+            user.SetForegroundWindow(hwnd)
+            time.sleep(.3)
         pointer(*opaque_point(), process.pid)
         s = state()
         result['after_opaque_click'] = s
@@ -138,9 +145,13 @@ def main():
         control(3)
         s = state()
         record('hidden_stops_and_releases_cache', not s['visible'] and not s['timer_active'] and s['cache_bytes'] == 0)
-        tray_toggle(process.pid)
+        if args.physical_tray:
+            from tray_pointer import tray_click
+            result['tray_pointer'] = tray_click(profile(args.edition)['title'])
+        else:
+            tray_toggle(process.pid)
         wait_for(lambda: state()['visible'])
-        record('tray_callback_restores', state()['visible'])
+        record('physical_tray_restores' if args.physical_tray else 'tray_callback_restores', state()['visible'])
         record('no_children', not psutil.Process(process.pid).children(recursive=True))
         modules = [m.path for m in psutil.Process(process.pid).memory_maps()]
         record('no_development_runtime_dependency', not any('.venv' in m.lower() for m in modules))
@@ -157,8 +168,15 @@ def main():
         process = subprocess.Popen([str(exe), '--config-dir', str(config), '--test-control'], env=env, cwd=tempfile.gettempdir())
         hwnd = wait_for(lambda: next((r['hwnd'] for r in windows(process.pid) if r['visible'] and r['title'] == profile(args.edition)['title']), None))
         record('relaunch_visible', bool(hwnd))
-        user.PostMessageW(hwnd, 0x8000+77, 5, 0)
-        process.wait(15)
+        if args.physical_tray:
+            result['tray_exit_pointer'] = tray_click(profile(args.edition)['title'], right=True)
+            popup = wait_for(lambda: next((r for r in windows(process.pid) if r['visible'] and 'Popup' in r['class_name']), None))
+            time.sleep(.4)
+            pointer(popup['rect'][0]+50, popup['rect'][3]-14, process.pid)
+            record('physical_tray_menu_exit', process.wait(15) == 0)
+        else:
+            user.PostMessageW(hwnd, 0x8000+77, 5, 0)
+            process.wait(15)
     except Exception as exc:
         result['status'], result['error'] = 'FAIL', repr(exc)
         raise

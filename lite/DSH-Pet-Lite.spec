@@ -12,6 +12,7 @@ a = Analysis([str(root / 'lite/app.py')], pathex=[str(root / 'lite')],
     binaries=[], datas=[(str(assets_for(edition)), 'assets'), (str(identity), '.'),
                         (str(root / 'LICENSE'), '.'),
                         (str(root / 'THIRD_PARTY_NOTICES.md'), '.'),
+                        (str(root / 'ASSET_LICENSE.md'), '.'),
                         (str(root / 'lite/licenses'), 'licenses')],
     hiddenimports=[], hookspath=[], runtime_hooks=[],
     excludes=['pet', 'PySide6.QtNetwork', 'PySide6.QtQml', 'PySide6.QtQuick',
@@ -27,8 +28,12 @@ a.binaries = [item for item in a.binaries
                    Path(item[0]).name.lower() in plugins)
                   and Path(item[0]).name.lower() not in
                   {'qt6network.dll', 'qt6svg.dll', 'opengl32sw.dll'})]
+# This app never installs a QTranslator. Its bilingual menu text is in app.py.
+# Keep license texts; omit only Qt's unused compiled UI translations.
+a.datas = [item for item in a.datas if not
+           (item[0].replace('\\', '/').startswith('PySide6/translations/') and item[0].endswith('.qm'))]
 pyz = PYZ(a.pure)
 exe = EXE(pyz, a.scripts, [], exclude_binaries=True, name=product,
           debug=False, strip=False, upx=False, console=False,
-          icon=str(root / 'lite/assets/lite.ico'))
+          icon=str(assets_for(edition) / 'lite.ico'))
 coll = COLLECT(exe, a.binaries, a.datas, strip=False, upx=False, name=product)

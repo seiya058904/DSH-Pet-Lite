@@ -14,10 +14,10 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    out = ROOT/'build/dual-experiments'
+    out = ROOT/'build/v3-experiments'
     out.mkdir(parents=True, exist_ok=True)
     results = {}
-    for edition in ('full', 'ultra'):
+    for edition in ('core', 'ultra'):
         assets = assets_for(edition)
         m = json.loads((assets/'manifest.json').read_text(encoding='utf-8'))
         paths = [assets/n/f'{c["frames"]//2:04}.webp' for n,c in m['clips'].items()]
@@ -77,7 +77,7 @@ def main():
                             'manifest_sha256': hashlib.sha256((assets/'manifest.json').read_bytes()).hexdigest(),
                             'scope': 'Build-only warm-file-cache microbenchmark; not independent installed performance'}
         print(edition, json.dumps(results[edition]), flush=True)
-    (ROOT/'benchmarks/public/optimization-probes.json').write_text(json.dumps(results, indent=2), encoding='utf-8')
+    (ROOT/'benchmarks/public/v3-optimization-probes.json').write_text(json.dumps(results, indent=2), encoding='utf-8')
 
 
 if __name__ == '__main__':
