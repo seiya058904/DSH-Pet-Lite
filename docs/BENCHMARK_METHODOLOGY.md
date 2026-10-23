@@ -26,6 +26,11 @@ cycles continued advancing. CPU percentage is **NOT RELIABLY MEASURED**. Cycles
 are never converted with guessed clock frequency or described as energy savings.
 No driver, global timer resolution, power policy or administrative trace was changed.
 
+An owned synthetic three-second busy-loop calibration accumulated 2.78 native CPU
+seconds, confirming that the direct counter code can observe sustained CPU work.
+This does not repair the animation workload's anomalous accounting. See the
+[calibration samples](../benchmarks/public/cpu-counter-calibration.json).
+
 ## Timing, independent starts and long runs
 
 First Qt paint means completion of the first instrumented `paintEvent`; it differs

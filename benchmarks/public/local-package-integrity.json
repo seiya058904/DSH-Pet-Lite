@@ -1,0 +1,34 @@
+[
+  {
+    "edition": "full",
+    "zip": "DSH-Pet-Lite-Full-v1.0.0-win-x64-portable.zip",
+    "crc": "PASS",
+    "files": 25734,
+    "clips": 106,
+    "identity": {
+      "edition": "full",
+      "version": "1.0.0",
+      "product": "DSH-Pet-Lite-Full",
+      "title": "DSH Pet Lite Full",
+      "source_sha": "c9c52f9fc8dd773c2d619b55d4a78d3de164a33e",
+      "dirty": false,
+      "manifest_sha256": "2dd3f6c4184df21c7927324f2de0d755cb2c5170b5e65cf1fdb54f7186bb2126"
+    }
+  },
+  {
+    "edition": "ultra",
+    "zip": "DSH-Pet-Lite-Ultra-v1.0.0-win-x64-portable.zip",
+    "crc": "PASS",
+    "files": 1033,
+    "clips": 3,
+    "identity": {
+      "edition": "ultra",
+      "version": "1.0.0",
+      "product": "DSH-Pet-Lite-Ultra",
+      "title": "DSH Pet Lite Ultra",
+      "source_sha": "c9c52f9fc8dd773c2d619b55d4a78d3de164a33e",
+      "dirty": false,
+      "manifest_sha256": "72cdde00308098afe7982fb49d2643f52fe1b4a79387dc7e3498c570ca14de90"
+    }
+  }
+]

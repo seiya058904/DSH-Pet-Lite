@@ -23,3 +23,18 @@ Read [performance evidence](PERFORMANCE_REPORT.md), [animation coverage](ANIMATI
 [build instructions](BUILD.md), [install details](INSTALL.md) and [asset gate](../ASSET_LICENSE.md).
 Public CI checks both software profiles using synthetic rectangles; it does not
 claim real-asset, package or physical GUI acceptance.
+
+Local validation completed: Full 11 tests passed; Ultra 10 passed with the Full-only
+roaming test intentionally skipped. Each final executable completed at least 30
+minutes visible, five minutes paused and five minutes hidden, then restored and
+exited. Physical pointer/menu-exit checks passed after actual uninstall/reinstall.
+The four-product comparison used three independent starts per product.
+
+Local package sizes: Full 1,034,437,183 bytes, Ultra 55,620,173 bytes. Independent
+Private Bytes means were A 75.70 MB, B 54.24 MB, C 57.47 MB and D 54.34 MB.
+Ultra's measured +0.19% change has a 95% interval crossing zero; no clear regression
+or improvement is established. CPU-time accounting remains unreliable. Full's
+random workload differs from A, so no controlled A-to-C percentage claim is made.
+
+This is a **code-only prerelease**, not the requested completed stable dual-binary
+release. The attached source archive and its checksum are the only download artifacts.

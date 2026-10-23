@@ -22,6 +22,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "bdfe40c77628005aa7ec6010bb5c74befcab1cc1467a0e368a9f1bb4f4b2645d",
+      "source_frames_sha256": "ffac53163d2f3220aaaf2e80e9bfc6ff688e1db719690cec479644fcd791f7c8",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; click"
@@ -34,6 +36,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "6ba7a36b0f9b3cbc2994b5b00e9c7d520fe5fda9a5617e70928714ed9ceb3028",
+      "source_frames_sha256": "cc3ca29087109b4dba495617baf2102518312786e0eef3a5e5859fbc6454f4f6",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; click"
@@ -46,6 +50,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "b5326a7117a2e9b7a0f158734675a9d5546f098f1a568f2ecac85cfbebfc8820",
+      "source_frames_sha256": "4905e419d0144cb2a64262de77ce7904fa7d82dfac5e452a7605a78ea9798c2b",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; click"
@@ -58,6 +64,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "827cd633b0ae58df34ca2d3b9e8e53c838d86f44b91d4b096991058975173820",
+      "source_frames_sha256": "f91a5d30ea3398a0e3d8180bc59b0892133f87b86d63421d59a928f71c66bd12",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; click"
@@ -70,6 +78,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "2792a75d10d54982c8cec5e0f31c46d49e8f786931263a06fdbbccf7bcbb42a3",
+      "source_frames_sha256": "edb8bbbda4091b3d16c6016e4ff96d48a707a8755854b57edf341a74720f0d4f",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; click"
@@ -82,6 +92,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f239eb41e29c29c98879b096b05ecd51a06cef10e28a2e4ba9a9a8dab96a7ae7",
+      "source_frames_sha256": "1d646ca7741d7505ca3f40d753ae7b443ef77b402edb9b78acd94b5fae961a91",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; pointer drag while held"
@@ -94,6 +106,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "ad4039df746c8857fd34aa3a100e183f778f5cbae73a98fcc087fddcfdd5c793",
+      "source_frames_sha256": "1c9752c7065804daed9884c90a97b011813750859cb458bbce5c18dbddb25b76",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -106,6 +120,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "2f90e886ad5746ae2b96023c2009fe8d3d12f83abdb3814efdc832551a97be2e",
+      "source_frames_sha256": "a73f5d9411dc16996d53bec84d64caf153d032a5857066fe8c512b45779225b6",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -118,6 +134,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "673a5f0eeb7671339759e774efffb8518bae825e3591886d300a43c897a36bf6",
+      "source_frames_sha256": "5d1ade5080d50cb611b92d14e70ce35cda63b29ad956503ccd41db363462bce7",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -130,6 +148,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "b41ad9d2c299d9994456d0a589d25983a3c88cb91161866308987ad779aa7fd8",
+      "source_frames_sha256": "565e78483a28c3d871ca8c47b7a78e11608bafa2545da35f3fe1edbbd4eb853e",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -142,6 +162,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "a596ade023d27397f0b8bc57d1e2f7d41f7a3847f964483d13405bdd862f6a1d",
+      "source_frames_sha256": "cd4f6ce03a65ae7988d4fb43a4fa882db062fe312e5ae85248fb8c4a9c1a1681",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -154,6 +176,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "fb7b5eda06c88f11c4f4b23067af015a7722d3f22e486aa9ece5a41e0806532a",
+      "source_frames_sha256": "f25bf39d417253378f491218778694b7f19d96dc5445833c8beb13132ca6224e",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -166,6 +190,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "539006522797137ab3235bdc186fe44f9fde533b5e53d6b8667350bcd33a74c3",
+      "source_frames_sha256": "3f98c2bbaaa6ae2b180c655b41269d5822bcab811e46a7c72cb04757c7f07e1e",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -178,6 +204,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "864894a43769b9ea9580315933d2d55bdf5a35415be0d55e9e0a7244cb33d7fa",
+      "source_frames_sha256": "92153238dc95321b32631e4b2d4a620c510012f5b8e728de2ea9f3962a126bec",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -190,6 +218,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f4845c70a9bdb036cd315f9ab714423e307378d7a58bb66ca7ab9b1afe1b5e18",
+      "source_frames_sha256": "026fe42202a764a2dbd9f2111ad395d03f2afceaa3f083e8fe9daa2f05b2bf55",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -202,6 +232,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "3682d0d8ca1e786f684579f6212b041dd913b84931b8b7a8e6d38786a2f64d1e",
+      "source_frames_sha256": "a997237c659b038b014e07773a0afc00418d1374eb5d3b25a44869d8a7e3f9a3",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -214,6 +246,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "eef56cbea50aed962998d347742f6db8fb17c5305638c2fdf87638be8d456378",
+      "source_frames_sha256": "f0e50ca5731982997d413e51688eced964950deb9f5c74f03a498c2868ddd687",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -226,6 +260,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "3ece9630e7cb8d5380c4424fce40b4c2b2a71d467a3a0fc6f55d86afffc9b8ab",
+      "source_frames_sha256": "c23c36bc1a2126c1dcf5255be4aebbbacc80aa9533026d3e7125edd1d4aae1c3",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -238,6 +274,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "57a36702a74f909321a7d98b941f4251aabbbe0eae90a5a2741b1f749caadbf7",
+      "source_frames_sha256": "ffccd1e1a23590bd24f9e077468ebadd1525614291ea39ffa96a5e4e615ff838",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -250,6 +288,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "0ec3d7dbcda94c346982ed2ba9031d11c5962dd78e3b95e8a170466fffbe9c9b",
+      "source_frames_sha256": "d98dd05a89d2ccd00fa1ac160c93c0655dd01c9cb9d6cb4be7861bcb10ecf681",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -262,6 +302,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "8feb0d18c8bb0789b838acf5b2bf38d60e823f13096d173cc13e8a163790b719",
+      "source_frames_sha256": "b8641cddcdaf49c46b21996fca097e8b54853c73e941e24948c5f13fb20c0556",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -274,6 +316,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "91e42ec8b4db79f0b0fcd2b36f5748f92495dfada35847f925592ad562189b4a",
+      "source_frames_sha256": "2313426269a7d1ae24b6b5e8c1de8884e481ddb0d0904c9b7bcca148bd0cab9d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -286,6 +330,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "8e7f06a1e8d8bc19a0bc849c8c80b967bbe4f576072587ad1951d15718d0ef3a",
+      "source_frames_sha256": "ba9de8d313de2c0d8174d9bc8953be17ee29799464551363f587c779797ff203",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -298,6 +344,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "2e7b70c5fad67d3eb2d44c9c1655a6972e570a2c750545f83434adffb0bbabfe",
+      "source_frames_sha256": "c2b39d1f52d7e8600325ec178db3810abb16143a1903cec9777537e1f53451ba",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -310,6 +358,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f00a21e8b2092a5bc54495bd5df1240bb3dd0342927761bce133badbbf3cdc69",
+      "source_frames_sha256": "91f5010fa1b703eabca11510063ada3b3d949dc0e7ccba7309ddb076213e2afd",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -322,6 +372,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "80549af34d0373e9d9b9e9afb2fa94e6ee48f92cee9b2d25046c02b073f8d895",
+      "source_frames_sha256": "3c18c16668faf5f9e60d9d3c7b6c9338d3b809b7a40e5af3a26b61a6bbe2c53e",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -334,6 +386,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "8801d1187319e8ee4363d436faa2ff19bd786980623ca231536f848dc4472b25",
+      "source_frames_sha256": "8c955acd4e471bfaf1c75f283c377499f250b873bf443eb08a1bd35442e1374d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -346,6 +400,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "100b45c20f44bbeee5a201b5d0c993a0ad5d2644fa22aec1145c17e318566df8",
+      "source_frames_sha256": "74c2bf1d46b0fb36a5519cf874493c557ce4537f9817d3e98b4f9294f42a368e",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -358,6 +414,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "4daa2bdb17f2e81d0300f170eb5a6537614c0aeaf0bec83355bc94c306966eb1",
+      "source_frames_sha256": "45bd53d98105a876025f8f5ab2ed2538536380324434bc00720d6287579b1469",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -370,6 +428,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "123edc4c9632bae4c63364e0a71929cc6d49780aa6e89badb1892cc0bc0f5f1a",
+      "source_frames_sha256": "c9b3c8da9832d916a7e1d15c3562b293570bae95fdfc6d4be36f543d0b258208",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -382,6 +442,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "44933f56afd82a50cca48064577a06351a4cdde2d5c1dfdb6eee4b7e78dc4e15",
+      "source_frames_sha256": "a29ed7f153af8f1ed7ddea55d76e94da0befdfc92f50f6ca727ccf9ccab31f1a",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -394,6 +456,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f6b866ceef49cc0c548f4fb7492917a7a895f353f979b3cf67420fdf06307c59",
+      "source_frames_sha256": "42de139944861bf48312451bccd440fdef372a865e665eb6ce8e752bf3ee0261",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -406,6 +470,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "8038974ba5f0ae320400045eb8f2c3d2c7cf36cea7efbc3042acf6eb1809e31e",
+      "source_frames_sha256": "3e271c9954dc2dbdc0033b0fed1a30fdc91f9533c548bca69194fc572186ce19",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -418,6 +484,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "63a5fa9788b6b81feb42b355594dd53489f6f0a8b46318e6e804b49d1b29dafc",
+      "source_frames_sha256": "8cd57d15e5a5124c590438e039e593932392cf539dc7280dcc277376c4e44d7d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -430,6 +498,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "763d9ed6151a07bd59aeb475f3764a81d55527e1f753f2ab37ca8f92a9be61aa",
+      "source_frames_sha256": "b3e649a5ea2c83ef7aa398b1ed97d71e1a623b4b629c4187f847db56416c4aab",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -442,6 +512,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "eb7a072e664e54ea19cf8b84a04b7e099c6bb02f63e3bd3b1196702278099843",
+      "source_frames_sha256": "09e635136cde066f589e9c1eaa3a39fa350bb85db36656e949aa50d1744772bc",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -454,6 +526,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "b60f9590d2556c0da24daabdb8b57681bfb7f43e74e2f80529b8b029f2d2f908",
+      "source_frames_sha256": "60b8b2d4df6d1df1d0cab53ceb42ecbefdbf445ab396930b63d5c456b229bb69",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -466,6 +540,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "9047d472ab289c74365d09dde31cb4ae8e0ec48a5563366d47041529393fed35",
+      "source_frames_sha256": "984d69074684594935051c3a033ed96d9c52adc962e736cd90e876e72c49f245",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -478,6 +554,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "bf155f51c536271ec0af34e62e6166dfbf01cc255445793d9105517a55173048",
+      "source_frames_sha256": "c2f4007fc7886b8f94eccf395db61ad649cbca0a526a306a7805b4880c67de6d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -490,6 +568,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "4f8bb92f72e2f7610497fbb850b64fa0a2a377eabf536fa6ed922ceaa2694f9d",
+      "source_frames_sha256": "c0f02fbfa549f1de24ff913e5b459d512933df5e958fe8a6893e22ff0cce6834",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -502,6 +582,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "916b5a45a7e063f9b90b70e58be15fb5171eee7e413dd813babca77593ff39e0",
+      "source_frames_sha256": "13d876d8ce4ebdeba0af608f2df89b83aa6d47bae69a9054dd8fa8f5a4a2f4eb",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -514,6 +596,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "e4f42b3de419e498ff0aee03b5cf188b3d67d14fd75000ed726ab4db3c96513e",
+      "source_frames_sha256": "a2a164daeaae9cdee0cb3fb74928f0b4e4689a6051cc1d18f952a7fdab4752c7",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -526,6 +610,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "c32edbd029a3ae06a38d89842787ae375e3b35ff7323f320496bd6691c579ca3",
+      "source_frames_sha256": "169b98a6bb571a1c841202938a045f4ffd94d6617e7ff459f887013e116f4739",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -538,6 +624,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "d71545ac928430fc044d2b774fdaf81dc8f730f0f03944793bbd1225cb91eb86",
+      "source_frames_sha256": "c3d42e22f3b68e3e6f5d516c3b2cedc24c3b08f48b30ef7886daf8d3dbdbb18e",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -550,6 +638,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "60cd369850f82a6263f4f7c445c5fb2af7589f90e5c35679b33506402c68158a",
+      "source_frames_sha256": "5bc89c09a2261921546036a17dcd89245ab5d28dd968421d43f88265cee91abc",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -562,6 +652,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "5afd87174a5d819c06d270d334b309864efa114bd3f3690a635c5bb13dcde219",
+      "source_frames_sha256": "9429bf8ef1e619d9b619517156de12194cd774a9aa852039e2f47ef6ef9e75bd",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -574,6 +666,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "e3caf33923cd50292890b2b61ff8a2649a23e8fbb26e3f17a617580b7dbf8729",
+      "source_frames_sha256": "023a85a567c2fff74d80dd92b55e9b571f496ee1e5ac7c05b519ba9bc298d6a6",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -586,6 +680,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "04066b5bbbab50420e563ea44fb651069e9f4c8c7339c41d72ba6dd0678c1891",
+      "source_frames_sha256": "8dd3a4361058e948687a75983cd3595ec117945c7e95b8057dd59c941162dcd0",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -598,6 +694,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "b945a292ea4cc2fc916780517cd2b69f210ded6a269cde68bb2aabe97a29c0c8",
+      "source_frames_sha256": "2b5cbfa886ce48424d5489c896999578e4ba02206ff7f80d5a362762a1d9892f",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -610,6 +708,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "c2953dd1feb6f1bd8e68b746664d735ec0d1521b5ebde32c217b51cf2226f554",
+      "source_frames_sha256": "afe1c95bada63d4eaa0630e8a0dc5403a9587b9faf24b9256caac5bf1c0b46a1",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -622,6 +722,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "03168a11da0e90ab54a39bc4e2c2b98ce2869fb479e6fe91fe6e941fb9d6358e",
+      "source_frames_sha256": "92aeff2ccfc646d5ab137bae30275c9f7b3632914c572e6400d01096fb39fa50",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -634,6 +736,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "1bc6870b054d2c647d8b98aeef8b8551532b2782a4bc8ef1a8b4c9cc005feb07",
+      "source_frames_sha256": "cb9e3a7c26e463e779bb010690a767b26f44a70e9cafbb95932a617cd0df19ea",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -646,6 +750,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "ff5133931be0b1e4c06d30c7326604292f3db94ca986928a05f8d7facc777df1",
+      "source_frames_sha256": "7c93a773fd8de1634cc11e7d7d6a0bb08d19da8fdfb9b900983267ecef557ed7",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -658,6 +764,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "7fe923c11c07444038a718879496d3cca7b88d146dc9362f9640d78dbb90964a",
+      "source_frames_sha256": "7ad91bc36bd1740dd2a42bd981185bd6b835a667e71fb7ba88ff9309e59a6c07",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -670,6 +778,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "67ddf62e154795a64c270a7bf1a8434356b8714fd0e18259b9d13ef24eb0b285",
+      "source_frames_sha256": "4a120aa6eb0f31d3b85c445353753bad22a00e6a9361c4647af36eec6861e9bf",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -682,6 +792,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "d2d6c927b4045064c9599bd499c81891723e9b68a6eaafb56334bdeaa7861d62",
+      "source_frames_sha256": "e3c5b767df675f28e629bb9fd92b2da058f24b48134668c6e558199e5d87c9e7",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -694,6 +806,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "1ca131ba321eff240ec2c29b7428d8e731d3f509cfff95f9fa0cfab73eb55b21",
+      "source_frames_sha256": "5c31532d64bec4f9518ca2cde3da83180745a1f8973c609e0ec40749554f6966",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -706,6 +820,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "7e75957ec279fb07ca9e9019f0a9a997258ff752bdf45c189b9e5c0490f91932",
+      "source_frames_sha256": "35d574b9b230123ca13c94b8132b718cde4c0da5316374e99ff0490e2ef6be3f",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -718,6 +834,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "03e0e449c48561d6a2d1ee8980c26bbab61fcf6809006c16d8ea243bd45cba9e",
+      "source_frames_sha256": "a875a79a1e9ce4f0878db39d2c8567f22784b90ccb0dff1bc5c8f072bb50c2a1",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -730,6 +848,8 @@
       "fps": 24,
       "duration_s": 4.916666666666667,
       "encoded_frames_sha256": "e426612703851ce62ed70e8a336272ab22d3481b56c9c0c912ab17d1eea0eb8b",
+      "source_frames_sha256": "b5ea0ae2aecc47e64576a143f244724e9c140fb57b3c0d362503dfc27f45462d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -742,6 +862,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "6950c551127aef665bc05e50cdb627f6ccd077e0752d42e14d770f6f3b5eab15",
+      "source_frames_sha256": "02f136ae01dc2e612d36dd461e50cf18178f63715d0a4b65b11959d490c2251d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -754,6 +876,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "894e0453bc49d9b04f112cbc88a50ae0c0a52df2ff4b9d3be51a3788da879016",
+      "source_frames_sha256": "cf91ae234d387ef614641347b65b9f08fe384cc598047b3274b2ef1384da449a",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -766,6 +890,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "a58bb07781b5d84b3e09c1e9ca6b89b762b03f6cfc97d84b641061ce2347f9d6",
+      "source_frames_sha256": "dea6964ab7b1e348c7cab42a9cf3247c7b1f2d03cb23c2b95d7f3a3baf5860c2",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -778,6 +904,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "6121c7876760a1a530dfe5e022ebe2e5516ab18c55a6eedf61e99e8e91829266",
+      "source_frames_sha256": "a0ce07b90b32ef88a3bec41fbe1cd42869e383992839b7b2ebec7263deac3c9d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -790,6 +918,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "6864c95f25d0c8041f9bb8ac6c89b907a5533aeb88aa12b40279d7036163e9d3",
+      "source_frames_sha256": "2d8a677f3cb495116df97fccf2391b5791d1afed104b2fe44e4baae4e75605ca",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -802,6 +932,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "080ebad20d4a99ce9af572fdc4e70c516e8a5ba5f94f922d411543c32a9c72c1",
+      "source_frames_sha256": "00571487013987e0eb67fd46eabbad32267b495b2e804f57da7a8e7931efcce7",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -814,6 +946,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "68f11012c82af21cd3f36335a1b80602d0fcb5060ce2bd3bb3017b9914c0c2b0",
+      "source_frames_sha256": "f422c52974f4623bae9743877e223c02dd2cc1445ded14322a07154db85c52cd",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -826,6 +960,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f44d6f91f9cb5ed9d8fab37842f8ceb55088379283a9e9e33846fc73eec7ebf0",
+      "source_frames_sha256": "40dd3b117bcc655dc97049c4875e84474c65b40f269709e595a3e7b70f631a92",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -838,6 +974,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f83ad1a88c782e09a5cf84dcf4cfb08676402359745c0a86e3f654d796139354",
+      "source_frames_sha256": "c965034c8603cc5bcef6d7090b58bde8965841198ef44657fad42909b0486790",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -850,6 +988,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f0e4109178397bd0fc9b2d8e49c1c5ae85e2d99d35772b2238ebe0f1285a7bc7",
+      "source_frames_sha256": "72c4210f2b719ac95f91285e26df6d64a54995c22f6b744fe890395cd1b7972a",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -862,6 +1002,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "12bd53e449160f4890d216bc01ce430e9b26544d2b6fa72d78b60e33bfa6f8b0",
+      "source_frames_sha256": "4ff24cac0e006178e5610910367f452f65acb471df23c87280ab6f51a82c8823",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -874,6 +1016,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "1314e19f2d98b204755c4f4442fbe9554cedb153bc89e13225e57f3c8c4694a5",
+      "source_frames_sha256": "f4538a072d5fecfe92a0535ff95cfbd2e006093e8883d18ab229408cff457a74",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -886,6 +1030,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "076e86d639c3e714bd5530c7293d883663b7f89ac7429d7ef954e0dc2fa61c4c",
+      "source_frames_sha256": "cf29853cbddaa6fd37b7bd505f0ed556e47b43bd37ac72f7ec064ad7d063e332",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -898,6 +1044,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "fc2f05a5b237ce99f01e70cf677b8948b93861536c5f6ad7581f5c786c6169ef",
+      "source_frames_sha256": "abc9722025d6696ba5c4e0d438aa538bce29bdbdf1d297d3eca10309410ab774",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -910,6 +1058,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "2a167924ab7a49790c4aed2ede3dd14dbf00b3724d5a7e6757d7ef6163836649",
+      "source_frames_sha256": "a15c4e182e9cd6be93926302bd07651f5c930e2919fc9e73183dd15c149df560",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -922,6 +1072,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "7867424252dd771191ed3212897fe83b029c207e87db9334bf2ebdd57fb44b7c",
+      "source_frames_sha256": "6f640a241614790171e08cdb84040f70653727cd2c37c5e74f9e025910586080",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -934,6 +1086,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "217c8609e89c44254ccf61c4f39f9cfbb7723898cb00486ebd9f95e19e34d371",
+      "source_frames_sha256": "eadaa8bde529d72b25d5ee6d015aa65715f5afba415e1d9c44256839db0938a5",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -946,6 +1100,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "b6ee027793abdec7c9c5f21f227e61a4515dd83f68c27089e71ba48bdcf0767c",
+      "source_frames_sha256": "c7537cce503dd4f10922ebfe6c67ef3672e14a75a9ec29c1f4aa06b59f8726da",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -958,6 +1114,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "808f1ce78768e629598996c718b78a7f1be2b2b5e123f56d2e9a281bdb4836ef",
+      "source_frames_sha256": "746db5f9a4e5155af17ca708749848350c9612298bf339db3c21f14fe9488a0b",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -970,6 +1128,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "17dda53b17aae43b71790fd2aca4dba51164fcdd6fd657b78e1b0224dc593579",
+      "source_frames_sha256": "d5e158e227d2877f9d9422fdbeb2f86d72207557578df3ebb2ea430853f811d3",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -982,6 +1142,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "e1a462ca9632bf49233242c7bee84125ef42b3899e0d8b5e240d14570a29f163",
+      "source_frames_sha256": "39b39b3fc937bc2d114b74eb5bb7650d8360fe90630cee79276bcfb15bacb205",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -994,6 +1156,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "65b8febeaaf333553a59dfc569baab0afa5f42685d04f686e338c8d012626d9f",
+      "source_frames_sha256": "184f20d4900a8bf77293b7e7b3514d1b4d95e9387d63a285f796a2d51e7958e6",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1006,6 +1170,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "dbf77c9fefd9f231e9a3a1b5d99ab642f0dda86929ffdea7639e8714741b3265",
+      "source_frames_sha256": "fc60d1af436c0c4f7ca04b24f440791b5852648572ffb49efd6102e176c9db23",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1018,6 +1184,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "18048b201da4cbe185e353b9615bdc022db40bdaf10ca60fb9ae6e56b576a999",
+      "source_frames_sha256": "8992830c33af4a0a6190aa3a596e1d9ab0f99dc23ef1602ab5484a82a51f1d9e",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1030,6 +1198,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "4d9ed9fc5f44051950905e54b5f26e5e4ab6242186f319f3b02fa0d6f2930430",
+      "source_frames_sha256": "87bcf2fa7b65a1ead8fa8e6d94bdab80e8377b15d840d07d7b708a3d1b02d327",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1042,6 +1212,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "43a81c259fe2d73336c19886c06db9d88a20ff49310fff28e57d9f0654947516",
+      "source_frames_sha256": "a843d130e06c20c4cd5c50d9aa077968be445bf607e8a52e7711af949088172a",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1054,6 +1226,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "f32f96de1a70696687f26bbafdada9778f2da205ed5a31507a10018c7965d121",
+      "source_frames_sha256": "f69542048dd8f49c7b3293cb8fa5f32d92511f74c8042bc736df070153ab3262",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1066,6 +1240,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "afaba0d7d60212345df616cd068d4d1738cbc4de66e36948b1085fb3488dc838",
+      "source_frames_sha256": "e222b3c8d47f17ae5a0ad493cbafe009f89de863f5c9bf6fa3fb6bc1898eef88",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1078,6 +1254,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "ccc49119f189279fdfd4b0fed48ee4b125445316bfc5f617276c7b267fe5bef5",
+      "source_frames_sha256": "e0bfa9732df5cd4cc41af731cb6bf6d0968d7f62526571da6dac64e456520dfb",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1090,6 +1268,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "ab1568467c328d3f11976f1c8188fc2ca4940449a15789cd897558909890a47c",
+      "source_frames_sha256": "55b6a13061a246cf5198dbb613b539ee93e68d4b028b7b7cd9cb6e6ad251d983",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1102,6 +1282,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "62a075b9e0639d80bea5c2b2a12a4c68a2aca71404d10788149014c4c75bc644",
+      "source_frames_sha256": "36a703a779dd57852da3d8b66c344232a1ee517a11456eb840a553ab9e13a356",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1114,6 +1296,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "07fa70102b60c5992df227b94c8074a7a6ac85930ebd9fc6f598d5e618601e96",
+      "source_frames_sha256": "feec0a3044c09d83cf03de2b1614287a968473cc625face804facbe059b20ae0",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1126,6 +1310,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "250e18cac8419987de638baf2e67938e8e9d2fc1af27f164bc8bdc2af5d9020f",
+      "source_frames_sha256": "9a26dde6a1c3e6bf992ef4bd39424fda37b3cca9bb623337b19bdc188654cbc4",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1138,6 +1324,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "1cc2082281741c990f6443bdc189903f404bab0ef624ff5519c76eb230fa41eb",
+      "source_frames_sha256": "90f5de094ee0add2681e7dbcebc69f8d999097ac8b9b6aac503f6a4604f5a37b",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1150,6 +1338,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "26b15ad3011b303da3f5f35293a1358a76795c7ab1532d35445fe2e28ff63dd6",
+      "source_frames_sha256": "9c6414fe29704cfa1c6c9572eb2071d78bf14b5e8c493f9bf004a54735fffe28",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1162,6 +1352,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "2f3fe43b3dea2671f32204a85e517531307e780e78ed9f03c40c3513495531a1",
+      "source_frames_sha256": "f8a012a0616b4fe4c1f36b61f1b54713aad23b7c287f9e407f6dfeda257a2ba4",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1174,6 +1366,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "b9ceddd44e9a63cd475ce358d2e4401759ba0ed83731131b4180718cee9b52f3",
+      "source_frames_sha256": "557cf26a69efb7fd208b7745bbcaf69b857eb640e7012944cafb25c19f13fd13",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1186,6 +1380,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "223fca9d92b7ecd6f5b491087af218d8ebc64d116b0e810030e0678a9848e3ab",
+      "source_frames_sha256": "f2d309e4347f340a42cdb0420f395b80d106f4eb0f79d4a207d63d035d1b78a2",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1198,6 +1394,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "3776029bc782ff1225f34ac34675941e776cf904e78cd66f2ff11b237acd4137",
+      "source_frames_sha256": "43db6a5cc24955d2fbad64372bbd378f9c236cba49c32a22800475db9652e831",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1210,6 +1408,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "39475b2d838918e41cdb16bcfcfff01d3a9ddc8cec4a980dbed97af4234e2e17",
+      "source_frames_sha256": "4c3af77c1269d9fdc77d245de18b58504c264422467525ac5b77d4c9256d029c",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1222,6 +1422,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "28468d6972640620343a6fe65fc580edb7e2ff832274516414dc2a54448322a1",
+      "source_frames_sha256": "b2671d725022f354d83506459df42b71efa35baf067bc4750bb3e99fd09a7049",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1234,6 +1436,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "411de99783db8280adbf741afc74d843b726df705e8d072d0ffa4c26a12e9641",
+      "source_frames_sha256": "5369484f38128f09562a67c33d2f622866b9fbd35e088eaa8386f10b774e0677",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1246,6 +1450,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "208d556272e7b230e31abaff61abade27dbce9fa223648dfdb1ba459f08d9a86",
+      "source_frames_sha256": "ce6136f69cc3af49a98efc17c367f4c5404162518120eeb5dddb3a7ad7db0481",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1258,6 +1464,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "a46387093f253025595eaf8519f5c4116aca6053c1a3088260e59c9ab77a841c",
+      "source_frames_sha256": "c1ad0d784c7a5c3f14dfe84822ec6b159579dfccb9f4347991022ee7b27e5050",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1270,6 +1478,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "dbb4ec01372a1f3a081d463cf9b191abc533fd905968a9bf5e20a12720a78fc6",
+      "source_frames_sha256": "1b089e1568f03bab0e14f482f5b41fe049e0cf6a86904cfc20bb0c49034e3347",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -1282,6 +1492,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "0afbb611c65c7f8e4f31c2a36adbcae7aaf43f3e07326e0a6c0cd2dd7bf823c9",
+      "source_frames_sha256": "430bf7b53e8f39b54d392da3810e6bed3979b9d500a0d35e471c7826b1c6c17d",
+      "alpha_crop_complete": true,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"

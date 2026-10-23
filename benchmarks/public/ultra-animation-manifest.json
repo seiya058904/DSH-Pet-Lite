@@ -18,6 +18,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "bc92f75609144f50ffd2f0fcb74dd19bd33ab23c90dbaf35718a3ffba4e8bee1",
+      "source_frames_sha256": "3f98c2bbaaa6ae2b180c655b41269d5822bcab811e46a7c72cb04757c7f07e1e",
+      "alpha_crop_complete": null,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; local animation scheduler"
@@ -30,6 +32,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "06b85c4114522659b41b92545c0e51030d898ce1ae015c0284e1b114312aed25",
+      "source_frames_sha256": "f91a5d30ea3398a0e3d8180bc59b0892133f87b86d63421d59a928f71c66bd12",
+      "alpha_crop_complete": null,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; click"
@@ -42,6 +46,8 @@
       "fps": 24,
       "duration_s": 10.041666666666666,
       "encoded_frames_sha256": "0df9bbf7ae5fcb17179349d1cc5bbf3d0901336aaff4c3a0ad34a3018321a7e0",
+      "source_frames_sha256": "1d646ca7741d7505ca3f40d753ae7b443ef77b402edb9b78acd94b5fae961a91",
+      "alpha_crop_complete": null,
       "pixel_or_historical_hash_failures": [],
       "status": "PASS",
       "trigger": "menu; pointer drag while held"

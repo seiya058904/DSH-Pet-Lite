@@ -47,3 +47,8 @@ not fetch character assets. The public code-only checkout lacks those inputs.
 These checks establish stored content, sequence lengths and logical durations.
 Qt paint timestamps are a separate diagnostic; neither proves physical monitor
 Present cadence. Pointer, lifecycle and long-run acceptance are recorded separately.
+
+The final full-frame audit also re-hashes every official input sequence against
+the pinned per-clip source digest and verifies that each stored crop exactly equals
+the complete nonzero-alpha bounding box. This checks that accessories/effects were
+not omitted outside an otherwise pixel-correct cropped rectangle.

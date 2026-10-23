@@ -57,19 +57,24 @@ def main():
         if link.exists():
             assert str(link) in approved, 'Shortcut is outside verified per-user locations'
             saved = archive/f'{index}-{link.name}'
-            link.rename(saved)
             saved_links.append((link, saved))
-    target.rename(backup)
-    result = subprocess.run(['powershell', '-NoProfile', '-File', str(Path(__file__).with_name('install.ps1')),
-                             '-Edition', args.edition, '-SourceRoot', args.source_root], env=env)
-    if result.returncode:
-        if target.exists():
-            target.rename(programs/f'{product}.failed-{time.time_ns()}')
-        backup.rename(target)
+    try:
         for link, saved in saved_links:
-            if not link.exists():
+            link.rename(saved)
+        target.rename(backup)
+        subprocess.run(['powershell', '-NoProfile', '-File', str(Path(__file__).with_name('install.ps1')),
+                        '-Edition', args.edition, '-SourceRoot', args.source_root], env=env, check=True)
+    except Exception:
+        if backup.exists():
+            if target.exists():
+                target.rename(programs/f'{product}.failed-{time.time_ns()}')
+            backup.rename(target)
+        for link, saved in saved_links:
+            if saved.exists():
+                if link.exists():
+                    link.rename(archive/f'failed-{time.time_ns()}-{link.name}')
                 shutil.copy2(saved, link)
-        raise RuntimeError('Update failed; previous installation restored')
+        raise RuntimeError('Update failed; previous installation and shortcuts restored') from None
     print(json.dumps({'edition': args.edition, 'installed': str(target), 'rollback': str(backup)}))
 
 

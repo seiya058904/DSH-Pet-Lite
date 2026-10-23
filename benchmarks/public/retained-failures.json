@@ -1,0 +1,15 @@
+{
+  "scope": "Summary only; original logs and owned-window screenshots remain local and are not published",
+  "failures": [
+    {"stage": "Full offscreen roaming test", "cause": "Test start x=500 placed a 461-pixel canvas outside an 800-pixel virtual screen", "resolution": "Use an in-bounds test position; final real-asset suite passed"},
+    {"stage": "Computer Use initialization", "cause": "Kernel asset initialization reported missing path twice", "resolution": "Used repository Win32 test framework; no plugin GUI success claimed"},
+    {"stage": "GUI harness environment", "cause": "Copied Windows environment keys were uppercase; SystemRoot dictionary lookup failed", "resolution": "Read case-insensitive os.environ before building child PATH"},
+    {"stage": "GUI receiver discovery", "cause": "The venv launcher had a child process owning the Qt window", "resolution": "Enumerate the receiver process tree; close the retained probe window"},
+    {"stage": "Native pointer harness", "cause": "Missing typed HWND signatures caused SetWindowPos failure; ownership guards stopped clicks", "resolution": "Declare Win32 signatures, scope every gesture, and order the owned backdrop correctly"},
+    {"stage": "Opaque click under focus transition", "cause": "One final Ultra attempt did not trigger its click action", "resolution": "Final successful probes explicitly activate their owned pet window", "remaining_limit": "Success does not erase the earlier failure or prove every unfocused-input configuration"},
+    {"stage": "Missing action recovery", "cause": "A failed Full action load could leave a movement plan after restoring the last image", "resolution": "Clear pending movement on failure; add regression test; rebuild both editions"},
+    {"stage": "Initial soak", "cause": "Agent intentionally stopped the pre-fix candidate for the resource-recovery correction", "resolution": "Retained FAIL/normal-exit records; final binary soaks restarted from zero and completed"},
+    {"stage": "First Ultra update", "cause": "Inherited PowerShell module search path prevented Get-FileHash discovery", "resolution": "Previous installation restored; reset only the child environment module path and retry successfully"},
+    {"stage": "Public export whitespace gate", "cause": "Upstream license texts contained trailing whitespace", "resolution": "Normalize whitespace in the public copy without changing license words; retain originals locally"}
+  ]
+}

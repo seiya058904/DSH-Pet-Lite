@@ -1,0 +1,25 @@
+{
+  "full": {
+    "installed": "%LOCALAPPDATA%/Programs/DSH-Pet-Lite-Full",
+    "exe_sha256": "f67a13f630084080a8ddfe32f83bd9adc9d0362738c12ce69fad518197e2fee3",
+    "uninstaller": "Uninstall-DSH-Pet-Lite.ps1",
+    "owned_files": 25734,
+    "actual_uninstall_reinstall": "PASS",
+    "same_exe_as_completed_soak": true,
+    "post_reinstall_pointer_menu_exit_relaunch": "PASS"
+  },
+  "ultra": {
+    "installed": "%LOCALAPPDATA%/Programs/DSH-Pet-Lite-Ultra",
+    "exe_sha256": "e909eac99ddf9a8fa044df223a00765aff6dd6e0fad643196779dc1f12ed56df",
+    "uninstaller": "Uninstall-DSH-Pet-Lite.ps1",
+    "owned_files": 1033,
+    "actual_uninstall_reinstall": "PASS",
+    "same_exe_as_completed_soak": true,
+    "post_reinstall_pointer_menu_exit_relaunch": "PASS"
+  },
+  "legacy_installations": {
+    "previous_full_exe_sha256": "b3ae0d7a33e0463f14b8c8d6e2f7d18d8444e51dbbe4419bf5d94ae5e166eab1",
+    "original_ultra_exe_sha256": "53be71cf3b04c34cdb71d577aa6eaae913f2e81e21291e2a250b5d260d7e15f4",
+    "preserved": true
+  }
+}

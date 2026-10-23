@@ -35,3 +35,9 @@ Updates must preserve a verified rollback copy and existing settings. An owned
 installation can be validated and backed up with `lite/update_edition.py`; it
 refuses running processes or changed payload files. Inspect its update report
 before considering any retained backup disposable.
+
+Both final editions were actually uninstalled using their installed scripts,
+reinstalled from the verified local packages, and passed pointer/menu-exit/relaunch
+checks again. The executable hashes remained identical to the completed soak builds.
+The legacy full installation and older three-animation rollback installation were
+left in place. See [install validation](../benchmarks/public/install-validation.json).

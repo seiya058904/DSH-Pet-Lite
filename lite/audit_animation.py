@@ -38,6 +38,7 @@ def main():
         for name, clip in m['clips'].items():
             failures = []
             h = hashlib.sha256()
+            source_hash = hashlib.sha256()
             official = ROOT/'benchmarks/upstream/full-packs/frames/anim'/clip.get('category', name)/clip.get('label', '')
             if edition == 'full':
                 candidates = list((ROOT/'benchmarks/upstream/full-packs/frames/anim').rglob('meta.json')) if not official.exists() else []
@@ -51,18 +52,25 @@ def main():
                 with Image.open(path) as frame:
                     pixels = frame.convert('RGBA')
                     if edition == 'full':
-                        with Image.open(source_frames[i]) as source:
+                        raw_source = source_frames[i].read_bytes()
+                        source_hash.update(raw_source)
+                        with Image.open(io.BytesIO(raw_source)) as source:
                             scaled = source.convert('RGBA').resize(tuple(m['size']), Image.Resampling.LANCZOS)
                         x, y = clip['offsets'][i]
                         expected = scaled.crop((x, y, x+pixels.width, y+pixels.height))
-                        if expected.tobytes() != pixels.tobytes():
+                        bbox = scaled.getchannel('A').getbbox() or (0, 0, 1, 1)
+                        if expected.tobytes() != pixels.tobytes() or bbox != (x, y, x+pixels.width, y+pixels.height):
                             failures.append(i)
                     elif digest(path) != old[f'{name}/{i:04}.webp']:
                         failures.append(i)
+            if edition == 'full':
+                assert source_hash.hexdigest() == clip['official_frames_sha256'], name
             rows.append({'id': name, 'category': clip.get('category', name),
                          'source': clip['source']['source'], 'frames': clip['frames'],
                          'fps': m['fps'], 'duration_s': clip['frames']/m['fps'],
                          'encoded_frames_sha256': h.hexdigest(),
+                         'source_frames_sha256': clip['official_frames_sha256'],
+                         'alpha_crop_complete': True if edition == 'full' and not failures else None,
                          'pixel_or_historical_hash_failures': failures,
                          'status': 'FAIL' if failures else 'PASS',
                          'trigger': 'menu; pointer drag while held' if name == 'drag' else

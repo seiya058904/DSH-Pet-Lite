@@ -1,0 +1,66 @@
+{
+  "sources": [
+    {
+      "repository": "PC2005-cloud/dsh-pet",
+      "ref": "48007b64ac0bebb2e97ac88344aed62de8399dd4",
+      "file": "LICENSE",
+      "sha256": "22757dc9c895b2729a2fc684d227cadfb54d5af3dd300029926839e8c4e269ce",
+      "url": "https://github.com/PC2005-cloud/dsh-pet/blob/48007b64ac0bebb2e97ac88344aed62de8399dd4/LICENSE",
+      "mit_notice": true,
+      "noncommercial_condition": false,
+      "attribution_required": false
+    },
+    {
+      "repository": "PC2005-cloud/dsh-pet",
+      "ref": "48007b64ac0bebb2e97ac88344aed62de8399dd4",
+      "file": "README.md",
+      "sha256": "707a9b3c31a373f7ee19e070c325a7c661894e28dfb2c66b1bbf2631678fefe5",
+      "url": "https://github.com/PC2005-cloud/dsh-pet/blob/48007b64ac0bebb2e97ac88344aed62de8399dd4/README.md",
+      "mit_notice": false,
+      "noncommercial_condition": true,
+      "attribution_required": true
+    },
+    {
+      "repository": "MerZlin/dsh-pet-indesktop",
+      "ref": "59c8bda3d1078155564267fbcb34fff9d2d80aff",
+      "file": "LICENSE",
+      "sha256": "044c8113b0e735ea1eb7b030d5d375697fb86fa04df408c12cef74dbe2317fa4",
+      "url": "https://github.com/MerZlin/dsh-pet-indesktop/blob/59c8bda3d1078155564267fbcb34fff9d2d80aff/LICENSE",
+      "mit_notice": true,
+      "noncommercial_condition": false,
+      "attribution_required": false
+    },
+    {
+      "repository": "MerZlin/dsh-pet-indesktop",
+      "ref": "59c8bda3d1078155564267fbcb34fff9d2d80aff",
+      "file": "THIRD_PARTY_NOTICES.md",
+      "sha256": "d08637f7405b2edafe9d5d9578ca3dc5d1a5c5f88d0e8dca6172fc4b945518ac",
+      "url": "https://github.com/MerZlin/dsh-pet-indesktop/blob/59c8bda3d1078155564267fbcb34fff9d2d80aff/THIRD_PARTY_NOTICES.md",
+      "mit_notice": true,
+      "noncommercial_condition": true,
+      "attribution_required": true
+    },
+    {
+      "repository": "MerZlin/dsh-pet-indesktop",
+      "ref": "34d810b1eadd98d00e7cb9b3b51428a45b5bf03e",
+      "file": "LICENSE",
+      "sha256": "044c8113b0e735ea1eb7b030d5d375697fb86fa04df408c12cef74dbe2317fa4",
+      "url": "https://github.com/MerZlin/dsh-pet-indesktop/blob/34d810b1eadd98d00e7cb9b3b51428a45b5bf03e/LICENSE",
+      "mit_notice": true,
+      "noncommercial_condition": false,
+      "attribution_required": false
+    },
+    {
+      "repository": "MerZlin/dsh-pet-indesktop",
+      "ref": "34d810b1eadd98d00e7cb9b3b51428a45b5bf03e",
+      "file": "THIRD_PARTY_NOTICES.md",
+      "sha256": "d08637f7405b2edafe9d5d9578ca3dc5d1a5c5f88d0e8dca6172fc4b945518ac",
+      "url": "https://github.com/MerZlin/dsh-pet-indesktop/blob/34d810b1eadd98d00e7cb9b3b51428a45b5bf03e/THIRD_PARTY_NOTICES.md",
+      "mit_notice": true,
+      "noncommercial_condition": true,
+      "attribution_required": true
+    }
+  ],
+  "decision": "Code-only public distribution; both character binaries withheld pending clear OC chain and redistribution conditions",
+  "source_delivery": "Public binary release additionally requires complete corresponding library sources or valid offer"
+}
