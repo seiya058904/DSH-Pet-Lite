@@ -115,7 +115,7 @@ Windows x64 · Python 3.12 · PySide6 / Qt 6.12.0 · PyInstaller (portable, one-
 
 - **Original desktop app:** [MerZlin/dsh-pet-indesktop](https://github.com/MerZlin/dsh-pet-indesktop), based on **v4.4.0**.
 - **Animation and project origin:** [PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet).
-- **Character:** OC **溟月**, attributed to **上善无形**, with animations prepared by the community.
+- **Character:** OC **Mingyue**, attributed to **Shangshan Wuxing**, with animations prepared by the community. Names are romanized here; the [original-language attribution](ASSET_LICENSE.md) is preserved in the asset terms.
 - **Code license:** MIT with original notices retained. **Artwork/animation terms are separate, attribution-bound and non-commercial — not MIT.**
 - **Qt/PySide6/Shiboken:** the release includes corresponding source archives, license texts and information on replacement/debugging rights.
 
