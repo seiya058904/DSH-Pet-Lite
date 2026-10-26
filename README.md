@@ -1,5 +1,11 @@
 <h1 align="center">🐾 DSH Pet Lite</h1>
 
+<p align="center">
+  <img src="docs/images/readme-cover.svg" width="100%" alt="Illustrated DSH Pet Lite cover showing a stylized desktop pet and the Core and Ultra editions" />
+  <br>
+  <sub>ORIGINAL SYMBOLIC COVER · REAL CHARACTER SCREENSHOT AND RIGHTS INFORMATION BELOW</sub>
+</p>
+
 <p align="center"><strong>Keep the animations. Cut the overhead.</strong></p>
 <p align="center">An independent, offline, lightweight Windows desktop pet.<br>
 Rebuilt from <a href="https://github.com/MerZlin/dsh-pet-indesktop">dsh-pet-indesktop</a> — focused on the character, not the feature bloat.</p>
