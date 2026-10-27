@@ -1,39 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="460" viewBox="0 0 1500 460" role="img" aria-labelledby="t d">
-<title id="t">DSH Pet Lite — desktop pet, lighter package</title>
-<desc id="d">Original abstract vector cover: a desktop frame, small generic pet silhouette, purple neon accent lines and distinct Core and Ultra labels. This is not a screenshot or rendering of the licensed character.</desc>
-<defs>
-<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0E1121"/><stop offset=".55" stop-color="#20203D"/><stop offset="1" stop-color="#3B234A"/></linearGradient>
-<linearGradient id="accent"><stop stop-color="#94E7F6"/><stop offset=".55" stop-color="#BDA2F9"/><stop offset="1" stop-color="#F0A7CD"/></linearGradient>
-<linearGradient id="desktop" x2="1" y2="1"><stop stop-color="#24334A"/><stop offset="1" stop-color="#201C39"/></linearGradient>
-<pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#C8D8F3" stroke-opacity=".055"/></pattern>
-</defs>
-<rect width="1500" height="460" fill="url(#bg)"/><rect width="1500" height="460" fill="url(#grid)"/>
-<path d="M0 458H1500" stroke="#CBADDA" stroke-opacity=".22"/>
-<g font-family="Segoe UI,Arial,sans-serif">
-<rect x="84" y="60" width="286" height="39" rx="20" fill="#3A2D55" stroke="#846AAB"/>
-<circle cx="105" cy="79" r="5" fill="#ADECEB"/><text x="122" y="86" font-size="17" font-weight="700" letter-spacing="2.4" fill="#DBCCEF">WINDOWS DESKTOP PET</text>
-<text x="79" y="207" font-size="80" font-weight="850" letter-spacing="-2.7" fill="#F2ECFC">DSH PET</text>
-<text x="79" y="295" font-size="94" font-weight="850" letter-spacing="-3" fill="url(#accent)">LITE</text>
-<text x="87" y="347" font-size="27" fill="#D9CEEC">Keep the animations. Cut the overhead.</text>
-<path d="M89 380H714" stroke="#A88CB5" stroke-opacity=".42"/>
-<text x="90" y="418" font-size="18" letter-spacing="2.5" font-weight="700" fill="#BCAED4">CORE  ·  ULTRA  ·  OFFLINE RUNTIME</text>
-</g>
-<!-- A symbolic desktop and pet; not an upstream animation frame. -->
-<rect x="874" y="60" width="528" height="331" rx="25" fill="#151B30" stroke="#9488C2" stroke-width="4"/>
-<rect x="891" y="77" width="494" height="296" rx="15" fill="url(#desktop)"/>
-<path d="M892 116H1384" stroke="#9F8ED5" stroke-opacity=".31" stroke-width="2"/>
-<circle cx="923" cy="97" r="6" fill="#E79BC0"/><circle cx="946" cy="97" r="6" fill="#DEC087"/><circle cx="969" cy="97" r="6" fill="#99D9D1"/>
-<g stroke="#7B9AB5" stroke-opacity=".45" fill="none"><path d="M915 343H1364M915 298H1364M915 253H1364" stroke-dasharray="4 10"/><path d="M1010 137V353M1116 137V353M1222 137V353M1328 137V353" stroke-dasharray="3 10"/></g>
-<ellipse cx="1141" cy="338" rx="129" ry="21" fill="#C19AF8" opacity=".19"/>
-<!-- Original generic companion mark, intentionally not the licensed character -->
-<g fill="#C1B6F5" stroke="#EBE0FF" stroke-width="6" stroke-linejoin="round">
-<path d="M1070 227L1041 151Q1038 143 1050 147L1105 183Q1142 170 1179 183L1233 147Q1245 143 1243 155L1213 227Q1245 262 1227 303Q1212 337 1139 337Q1065 337 1051 302Q1033 259 1070 227Z"/>
-</g>
-<g fill="#333651"><ellipse cx="1099" cy="266" rx="9" ry="12"/><ellipse cx="1179" cy="266" rx="9" ry="12"/><path d="M1127 290q12 9 24 0" fill="none" stroke="#44425D" stroke-width="5" stroke-linecap="round"/></g>
-<g fill="none" stroke="#F0A7CD" stroke-width="4" stroke-linecap="round"><path d="M1054 288L1022 280M1055 300L1025 304M1225 288L1255 281M1223 300L1252 305"/></g>
-<path d="M929 356H1359" stroke="#BCA8E6" stroke-opacity=".25" stroke-width="2"/>
-<g font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="750" letter-spacing="2" fill="#E4DBFC">
-<rect x="922" y="400" width="169" height="40" rx="20" fill="#43345F" stroke="#9971C2"/><text x="956" y="426">CORE</text>
-<rect x="1103" y="400" width="169" height="40" rx="20" fill="#303D5E" stroke="#7CA5D4"/><text x="1134" y="426">ULTRA</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">A small companion on the desktop</title>
+  <desc id="desc">Original symbolic illustration of an animated character floating over desktop windows and a sequence of frames.</desc>
+  <rect width="1200" height="320" fill="#25253f"/>
+  <rect x="90" y="55" width="500" height="201" rx="12" fill="#f4eff9"/>
+  <path d="M90 96h500" stroke="#d5cce6" stroke-width="3"/>
+  <circle cx="117" cy="76" r="6" fill="#e6a986"/><circle cx="139" cy="76" r="6" fill="#e6a986"/><circle cx="161" cy="76" r="6" fill="#e6a986"/>
+  <path d="M124 128h173m-173 29h231m-231 29h191m-191 29h135" stroke="#b6a9c8" stroke-width="7" stroke-linecap="round"/>
+  <rect x="440" y="86" width="292" height="185" rx="12" fill="#c8bce4" stroke="#25253f" stroke-width="5"/>
+  <path d="M440 124h292" stroke="#25253f" stroke-width="4"/>
+  <circle cx="463" cy="105" r="5" fill="#25253f"/><circle cx="481" cy="105" r="5" fill="#25253f"/>
+  <path d="M579 217c-41 0-61-29-61-62 0-34 22-53 61-53s61 19 61 53c0 33-20 62-61 62z" fill="#9f8ccc" stroke="#25253f" stroke-width="5"/>
+  <path d="M540 120l-5-31 26 20m57 11 5-31-26 20" fill="#9f8ccc" stroke="#25253f" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="560" cy="158" r="5" fill="#25253f"/><circle cx="598" cy="158" r="5" fill="#25253f"/>
+  <path d="M573 172q6 5 12 0" fill="none" stroke="#25253f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M791 158h293" stroke="#7ab8ac" stroke-width="3" stroke-dasharray="8 9"/>
+  <g fill="#f4eff9"><rect x="785" y="128" width="60" height="60" rx="12"/><rect x="905" y="128" width="60" height="60" rx="12"/><rect x="1025" y="128" width="60" height="60" rx="12"/></g>
+  <g fill="#9f8ccc"><circle cx="815" cy="158" r="16"/><circle cx="935" cy="153" r="16"/><circle cx="1055" cy="158" r="16"/></g>
+  <path d="M785 235h300" stroke="#77718d" stroke-width="3"/><circle cx="815" cy="235" r="6" fill="#7ab8ac"/><circle cx="935" cy="235" r="6" fill="#7ab8ac"/><circle cx="1055" cy="235" r="6" fill="#7ab8ac"/>
 </svg>
