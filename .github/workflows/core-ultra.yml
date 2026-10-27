@@ -1,5 +1,14 @@
 name: Core and Ultra validation
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    paths-ignore:
+      - 'AGENTS.md'
+      - '**/readme-*'
+  pull_request:
+    paths-ignore:
+      - 'AGENTS.md'
+      - '**/readme-*'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
