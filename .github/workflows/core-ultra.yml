@@ -5,6 +5,7 @@ permissions:
 jobs:
   edition:
     runs-on: windows-latest
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
